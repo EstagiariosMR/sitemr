@@ -1,0 +1,120 @@
+.integrado {
+    width: auto;
+    height: auto;
+    border: 2px solid #000000; 
+    border-radius: 10px;
+    padding: 50px;
+    margin: auto auto 25px auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    color: black;
+}
+
+.integrado h1 {
+    color: rgb(156, 19, 19);
+    text-align: left;
+    font-style: bold;
+    font-size: 30px;
+    margin: 0 0 40px 0;
+    text-align: center;
+}
+
+.ano-box {
+    width: auto;
+    height: auto;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    margin: 25px auto;
+    align-items: center;
+}
+
+.turma-box {
+    width: auto;
+    height: auto;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    margin: 25px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.turma-grid {
+    column-count: 2;
+    column-gap: 16px;
+    margin-top: 10px; /* Corrigido de 10x para 10px */
+}
+
+.turma-box h3 {
+    width: 100%;
+    text-align: center;
+}
+
+.form-trabalhos {
+    width: 1200px;
+    height: auto;
+    background-color: #fefefe;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    padding: 10px 5px 15px 5px;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.trabalho-box {
+    width: 400px;
+    height: 50px;
+    border: 2px solid #c5c5c5; /* Borda */
+    border-radius: 10px; /* Ângulo da borda */
+    padding: 4px 10px; /* Espaçamento interno */
+    margin: 0 auto 15px auto; /* Espaçamento externo */
+    text-align: center;
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.trabalho-box:hover {
+    background-color: #eeeeee;
+}
+
+.trabalho-box p {
+    margin: 2px;
+}
+
+/* Estilo específico para inputs de texto dentro da classe .integrado */
+.integrado input[type="text"] {
+    padding: 8px;
+    border: 1px solid #1c2c4c;
+    border-radius: 4px;
+    width: 200px;
+}
+
+.integrado select, .integrado input[type="text"] {
+    padding: 8px;
+    border: 1px solid #1c2c4c;
+    border-radius: 4px;
+    width: 200px;
+}
+
+.integrado input[type="submit"], .integrado .form-trabalhos button {
+    background-color: #25108e;
+    color: white;
+    border: none;
+    margin: auto;
+    padding: 10px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    border-style: none;
+}
+
+.integrado input[type="submit"]:hover, .integrado .form-trabalhos button:hover {
+    background-color: #2e15a9;
+}
+
+.integrado label {
+    padding: auto;
+}

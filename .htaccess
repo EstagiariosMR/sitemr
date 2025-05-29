@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /sitemr/
+
+# Ignora arquivos e pastas reais
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-ds
+
+# Rota para noticia com ID
+RewriteRule ^noticia/([0-9]+)$ index.php?page=noticia&id=$1 [QSA,L]
+
+# Rota padrão
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?page=$1 [QSA,L]
