@@ -2,7 +2,7 @@
 require 'crud.php';
 
 $pagina = isset($_GET['pagina']) && is_numeric($_GET['pagina']) ? (int) $_GET['pagina'] : 1;
-$limite_por_pagina = 5;
+$limite_por_pagina = 10;
 $offset = ($pagina - 1) * $limite_por_pagina;
 
 $noticias = read(
