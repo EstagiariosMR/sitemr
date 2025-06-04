@@ -6,7 +6,7 @@
 
 $host = 'ftp.mariarocha.org.br';
 $db = 'mariarocha04';
-$user = 'mariarocha';
+$user = 'mariarocha04';
 $pass = 'tecnico2019';
 
 $charset = 'utf8mb4';
