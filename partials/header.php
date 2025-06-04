@@ -29,7 +29,14 @@
             <a href="/sitemr/"><img src="assets/img/logoEscola.png" class="logo"></a>
             <nav>
                 <ul>
-                    <li><a href="/sitemr/sobre">Sobre a Escola</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Sobre a Escola</a>
+                        <ul class="dropdown-content">
+                            <li><a href="/sitemr/quem_somos">Quem Somos</a></li>
+                            <li><a href="/sitemr/localizacao">Localização</a></li>
+                            <li><a href="/sitemr/infraestrutura">Infraestrutura</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/sitemr/integral">Ensino Médio em Tempo Integral</a></li>
                     <li><a href="/sitemr/integrado">Curso Técnico em Informática Integrado ao Ensino Médio </a></li>
                     <li class="dropdown">
