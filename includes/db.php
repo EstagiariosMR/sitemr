@@ -7,7 +7,7 @@
 $host = 'mysql.mariarocha.org.br';
 $db = 'mariarocha04';
 $user = 'mariarocha04';
-$pass = 'tecnico2019';
+$pass = 'tecnico2025';
 
 $charset = 'utf8mb4';
 
