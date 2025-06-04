@@ -1,19 +1,22 @@
 
 .slideshow-container {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
     justify-content: center;
     align-items: center;
     background-color: #ff0000;
+    
+    transition: all 2;
 }
 
 .slides img {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     display: none;
+
 }
 
 .prev, .next {

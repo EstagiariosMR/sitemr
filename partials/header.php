@@ -29,7 +29,6 @@
             <a href="/sitemr/"><img src="assets/img/logoEscola.png" class="logo"></a>
             <nav>
                 <ul>
-
                     <li><a href="/sitemr/sobre">Sobre a Escola</a></li>
                     <li><a href="/sitemr/integral">Ensino Médio em Tempo Integral</a></li>
                     <li><a href="/sitemr/integrado">Curso Técnico em Informática Integrado ao Ensino Médio </a></li>
@@ -41,7 +40,6 @@
                             <li><a href="/sitemr/secretariado">Técnico em Secretariado</a></li>
                         </ul>
                     </li>
-                    <li><a href="/sitemr/localizacao">Localização</a></li>
                     <li><a href="/sitemr/contato">Contato</a></li>
                 </ul>
             </nav>
