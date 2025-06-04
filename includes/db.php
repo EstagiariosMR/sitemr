@@ -4,7 +4,7 @@
 // $user = 'root';
 // $pass = '';
 
-$host = 'ftp.mariarocha.org.br';
+$host = 'mysql.mariarocha.org.br';
 $db = 'mariarocha04';
 $user = 'mariarocha04';
 $pass = 'tecnico2019';
