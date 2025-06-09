@@ -1,0 +1,218 @@
+/* estilo.css */
+
+/* Importação da fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Variáveis globais de cores e fonte */
+:root {
+  /* Fonte padrão */
+  --font-base: 'Poppins', sans-serif;
+
+  /* Cores de fonte */
+  --color-primary: #1c2c4c; /* azul escuro – títulos */
+  --color-secondary: #9c1313; /* vermelho escuro – links e destaques */
+  --color-black: #000000; /* texto padrão */
+  --color-white: #ffffff; /* texto claro em fundos escuros */
+
+  /* Cores de fundo */
+  --color-light: #f4f4f4; /* cinza claro – fundo geral */
+  --color-light-translucent: rgba(177, 170, 253, 0.2); /* translúcido – foco/input */
+  --color-gray-bg: #d3d3d3; /* cinza claro – usado em login */
+}
+
+/* Regras globais */
+body {
+  font-family: var(--font-base);
+  background-color: var(--color-light);
+  color: var(--color-black);
+}
+
+/* Textos */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-base);
+  color: var(--color-primary);
+  margin: 0 0 1rem 0;
+}
+
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* largura e altura */
+
+/* Utilitários fixos */
+.full-width { width: 100%; }
+.full-height { height: 100%; }
+
+/* Utilitários customizáveis de largura e altura */
+.w-custom { width: var(--w, auto); }
+.h-custom { height: var(--h, auto); }
+
+/* Utilitários margin customizáveis (seta valor via variável, padrão 0) */
+.m-custom { margin: var(--m, 0); }
+.mt-custom { margin-top: var(--mt, 0); }
+.mb-custom { margin-bottom: var(--mb, 0); }
+.ml-custom { margin-left: var(--ml, 0); }
+.mr-custom { margin-right: var(--mr, 0); }
+
+/* Utilitários margin auto */
+.m-auto { margin: auto; }
+.mt-auto { margin-top: auto; }
+.mb-auto { margin-bottom: auto; }
+.ml-auto { margin-left: auto; }
+.mr-auto { margin-right: auto; }
+
+/* Utilitários padding customizáveis (seta valor via variável, padrão 0) */
+.p-custom { padding: var(--p, 0); }
+.pt-custom { padding-top: var(--pt, 0); }
+.pb-custom { padding-bottom: var(--pb, 0); }
+.pl-custom { padding-left: var(--pl, 0); }
+.pr-custom { padding-right: var(--pr, 0); }
+
+
+/* Exemplo de uso:
+<div class="m-custom p-custom" style="--m: 20px; --p: 50px;"></div>
+<div class="mb-custom" style="--mb: 25px;"></div>
+<div class="p-custom" style="--p: 10px 5px 15px 5px;"></div>
+*/
+
+/* Formulários */
+
+input, select {
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  color: rgba(0, 0, 0, 0.775);
+  background-color: var(--color-light);
+}
+
+input::placeholder {
+  color: var(--color-primary);
+}
+
+/* Listas */
+
+/* Classe para listas sem marcadores */
+ul.no-bullets, ol.no-bullets {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* ------------------------------------- HEADER ------------------------------------- */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+  color: var(--color-white); /* ou --color-black, dependendo do conteúdo */
+  /* height: 100%; → usar .h-custom com --h: 100% no HTML */
+}
+
+/* barra superior vermelha de links */
+.barra-vermelha {
+  background-color: var(--color-secondary);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* height: 50px → usar .h-custom com --h: 50px */
+  /* width: 100% → usar .full-width */
+  /* text-align: right → usar .text-right */
+  /* margin: 0 → usar .m-custom ou omitir (valor padrão) */
+  /* padding: 0 → usar .p-custom ou omitir */
+  /* padding-right: 60px → usar .pr-custom com --pr: 60px */
+}
+
+.barra-vermelha a {
+  color: var(--color-white);
+  font-weight: bold;
+  /* text-decoration: none → já está no estilo.css */
+}
+
+/* barra inferior azul com logo e menu */
+.barra-azul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  /* width: 100% → usar .full-width */
+  /* height: 200px → usar .h-custom com --h: 200px */
+}
+
+.barra-azul .logo {
+  /* width: 175px → usar .w-custom com --w: 175px */
+  /* height: 175px → usar .h-custom com --h: 175px */
+  /* margin: 30px 90px 25px 0px → usar .m-custom com --m: 30px 90px 25px 0 */
+  /* align-items: left → não é válido em elementos normais, remover */
+}
+
+.barra-azul nav ul {
+  list-style-type: none;
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-right: 30px → usar .mr-custom com --mr: 30px */
+  /* padding: 0 → usar .p-custom ou deixar padrão */
+}
+
+.barra-azul nav ul li {
+  position: relative;
+  /* margin: 5px 2px → usar .m-custom com --m: 5px 2px */
+}
+
+.barra-azul nav ul li a {
+  display: flex;
+  background-color: var(--color-primary);
+  border-radius: 15px;
+  color: var(--color-white);
+  transition: background-color 0.3s;
+  /* padding: 10px → usar .p-custom com --p: 10px */
+  /* text-align: center → usar .text-center */
+}
+
+.barra-azul nav ul li a:hover {
+  background-color: var(--color-secondary);
+}
+
+.barra-azul .dropdown {
+  position: relative;
+}
+
+.barra-azul .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--color-primary);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  list-style: none;
+  /* padding/margin removidos → usar utilitários se necessário */
+}
+
+.barra-azul .dropdown-content li a {
+  display: block;
+  color: var(--color-white);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  /* padding: 8px → usar .p-custom com --p: 8px */
+}
+
+.barra-azul .dropdown-content li a:hover {
+  background-color: var(--color-secondary);
+}
+
+.barra-azul .dropdown:hover .dropdown-content {
+  display: block;
+}
+/* ---------------------------------------------------------------------------------- */
