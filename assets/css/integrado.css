@@ -30,6 +30,10 @@
     align-items: center;
 }
 
+.ano-box h2{
+    font-size: bold;
+}
+
 .turma-box {
     width: auto;
     height: auto;
@@ -49,7 +53,6 @@
 .turma-box h3 {
     width: 100%;
     text-align: center;
-    
 }
 
 .form-trabalhos {
