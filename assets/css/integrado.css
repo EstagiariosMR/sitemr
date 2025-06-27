@@ -16,7 +16,7 @@
     color: rgb(156, 19, 19);
     text-align: left;
     font-style: bold;
-    font-size: 30px;
+    font-size: 0px;
     margin: 0 0 40px 0;
     text-align: center;
 }
@@ -24,7 +24,7 @@
 .ano-box {
     width: auto;
     height: auto;
-    /* border: 2px solid #000000; */
+    border: 2px solid #000000;
     border-radius: 10px;
     margin: 25px auto;
     align-items: center;
@@ -41,7 +41,7 @@
 }
 
 .turma-grid {
-    column-count: 2;
+    column-count: 3;
     column-gap: 16px;
     margin-top: 10px; /* Corrigido de 10x para 10px */
 }
@@ -49,6 +49,7 @@
 .turma-box h3 {
     width: 100%;
     text-align: center;
+    
 }
 
 .form-trabalhos {
@@ -66,7 +67,7 @@
 .trabalho-box {
     width: 400px;
     height: 50px;
-    /* border: 2px solid #c5c5c5; */
+    border: 2px solid #c5c5c5;
     border-radius: 10px; /* Ângulo da borda */
     padding: 4px 10px; /* Espaçamento interno */
     margin: 0 auto 15px auto; /* Espaçamento externo */

@@ -1,5 +1,6 @@
 .header-container {
-    height: 100%;
+    height: 30%;
+    width: 100%;
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
@@ -9,14 +10,14 @@
 
 .barra-vermelha {
     background: rgb(156, 19, 19);
-    height: 50px;
+    height: 5%;
     width: 100%;
     text-align: right;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: flex-end;
-    padding-right: 60px;
+    padding-right: 2%;
     align-items: center;
 }
 
@@ -29,7 +30,7 @@
 
 .barra-azul {
     width: 100%;
-    height: 200px;
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,10 +38,8 @@
 }
 
 .barra-azul .logo {
-    width: 175px;
-    height: 175px;
-    margin: 30px 90px 25px 0px;
-    align-items: left;
+    width: 30%;
+    height: 30%;
 }
 
 
@@ -62,7 +61,7 @@
 }
 
 .barra-azul nav ul li a {
-    padding: 10px;
+    padding: 5px;
     background-color: #1c2c4c;
     border-radius: 15px;
     text-align: center;

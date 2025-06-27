@@ -1,8 +1,8 @@
 
 .slideshow-container {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 99vw;
+    height: 70vh;
     overflow: hidden;
     justify-content: center;
     align-items: center;
@@ -12,8 +12,8 @@
 }
 
 .slides img {
-    width: 100vw;
-    height: 100vh;
+    width: 95vw;
+    height: 95vh;
     object-fit: cover;
     display: none;
 
