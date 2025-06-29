@@ -38,16 +38,17 @@ $action = $_GET['action'] ?? null;
 <head>
     <meta charset="UTF-8">
     <title>Painel Admin</title>
+    <link rel="stylesheet" href="assets/css/admin.css">
 </head>
 <body>
-<header style="background: #333; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
-    <div style="font-size: 18px; font-weight: bold;">Painel Administrativo</div>
-    <nav style="display: flex; gap: 10px; align-items: center;">
-        <a href="admin.php" style="color: white; text-decoration: none; padding: 6px 12px; background: #555; border-radius: 4px;">Início</a>
-        <a href="admin.php?action=noticias" style="color: white; text-decoration: none; padding: 6px 12px; background: #555; border-radius: 4px;">Notícias</a>
-        <a href="admin.php?action=trabalhos" style="color: white; text-decoration: none; padding: 6px 12px; background: #555; border-radius: 4px;">Trabalhos</a>
-        <form method="POST" style="display: inline;">
-            <button type="submit" name="btn_logout" style="color: white; background: crimson; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Sair</button>
+<header class="admin-header">
+    <div class="admin-title">Painel Administrativo</div>
+    <nav class="admin-nav">
+        <a href="admin.php" class="admin-link">Início</a>
+        <a href="admin.php?action=noticias" class="admin-link">Notícias</a>
+        <a href="admin.php?action=trabalhos" class="admin-link">Trabalhos</a>
+        <form method="POST" class="admin-logout-form">
+            <button type="submit" name="btn_logout" class="admin-logout-btn">Sair</button>
         </form>
     </nav>
 </header>

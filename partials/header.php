@@ -23,26 +23,26 @@
 </head>
 
 <body>
-    <header class="header-container"></header>
+    <header class="header-container">
     <div class="barra-vermelha">
         <a href="login.php">Entrar</a>
     </div>
         <div class="barra-azul">
-            <a href="/sitemr/"><img src="assets/img/logoEscola.png" class="logo"></a>
+            <a href="/sitemr/"><img src="assets/img/logopng.png" class="logo"></a>
             <nav>
                 <ul>
                     <li class="dropdown">
-                        <a href="#" class="dropbtn">Sobre a Escola</a>
+                        <a href="#" class="dropbtn">Sobre <br>a Escola</a>
                         <ul class="dropdown-content">
                             <li><a href="/sitemr/quem_somos">Quem Somos</a></li>
                             <li><a href="/sitemr/localizacao">Localização</a></li>
                             <li><a href="/sitemr/infraestrutura">Infraestrutura</a></li>
                         </ul>
                     </li>
-                    <li><a href="/sitemr/integral">Ensino Médio em Tempo Integral</a></li>
-                    <li><a href="/sitemr/integrado">Curso Técnico em Informática Integrado ao Ensino Médio </a></li>
+                    <li><a href="/sitemr/integral">Ensino Médio <br>em Tempo Integral</a></li>
+                    <li><a href="/sitemr/integrado">Curso Técnico em Informática <br>Integrado ao Ensino Médio </a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropbtn">Curso Técnico Subsequente (Educação Profissional)</a>
+                        <a href="#" class="dropbtn">Curso Técnico Subsequente<br> (Educação Profissional)</a>
                         <ul class="dropdown-content">
                             <li><a href="/sitemr/informatica">Técnico em Informática</a></li>
                             <li><a href="/sitemr/contabilidade">Técnico em Contabilidade</a></li>
