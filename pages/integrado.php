@@ -236,6 +236,7 @@ if (isset($_POST['btn_trabalhos'])) {
 
 
 
+        <script src="/sitemr/assets/js/scrollForm.js"></script>
         <script src="/sitemr/assets/js/limparForm.js"></script>
     </div>
 </main>
