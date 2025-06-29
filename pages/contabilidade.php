@@ -5,7 +5,7 @@
     <section class="content">
         <h2>Objetivo do Curso</h2>
         <p>
-            &nbsp;&nbsp;O Curso Técnico em Contabilidade objetiva desenvolver no aluno a excelência contábil, de maneira ética e organizada, 
+            O Curso Técnico em Contabilidade objetiva desenvolver no aluno a excelência contábil, de maneira ética e organizada, 
 			transformando as informações em conhecimentos técnicos e operacionais inerentes à área de gestão e negócios.
         </p>
 
@@ -37,6 +37,12 @@
             O Técnico em Informática é um profissional qualificado para compreender e tomar decisões relativas às mais diversas
             áreas de informática. Esse profissional deve demonstrar competências de:
         </p>
+        <h1>Grade Curricular</h1>
+        <br>
+        <div class="grade">
+            <img src="#" alt="">
+            <a href="#">Clique para fazer o dowload</a>
+        </div>
 
             </section>
         <!-- <ul>

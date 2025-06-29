@@ -1,0 +1,129 @@
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 colunas fixas */
+    gap: 20px;
+    max-width: 75rem;
+    margin: 1rem auto;
+}
+
+.card {
+    width: 18vw;
+    height: 30vh;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 0.8rem;
+
+}
+
+.card img {
+    width: 80%;
+    height: 75%;
+    margin: 0;
+    object-fit: cover;
+}
+
+.card-body {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    padding: 0;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.mapa-localizacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto 0 auto;
+    width: 100%;
+}
+
+.mapa-localizacao iframe {
+    width: 100%;
+    max-width: 1000px;
+    height: 420px;
+    border: 2px solid #1c2c4c;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(28,44,76,0.10);
+    background: #fafbfc;
+    display: block;
+    margin: 0 auto;
+}
+
+.mapa-localizacao iframe:hover {
+    outline: 2px solid #1c2c4c;
+}
+
+/* Estilo para listas */
+main ul {
+    list-style: disc inside;
+    margin: 20px 80px 24px 75px; /* igual ao <p>: left 75px, right 80px */
+    padding-left: 0; /* sem recuo extra */
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+main ul li {
+    color: #1c2c4b;
+    font-size: 1.08rem;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
+}
+
+.btn Button, .btn button {
+    background-color: #1c2c4b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(28,44,75,0.08);
+}
+
+.btn Button:hover, .btn button:hover {
+    background-color: #243a63;
+}
+
+a.btn {
+    display: inline-block;
+    background: #1c2c4c;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.8rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+a.btn:hover {
+    background: rgb(156, 19, 19);
+}

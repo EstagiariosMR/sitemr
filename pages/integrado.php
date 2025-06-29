@@ -101,10 +101,12 @@ if (isset($_POST['btn_trabalhos'])) {
             a integração consciente no mundo do trabalho. </p>
     </section>
     <div class="integrado">
+
         <h1>Trabalhos Integrado</h1>
+
         <form method="POST" id="form-trabalhos">
             <div class="form-trabalhos">
-                <label for="ano">Ano:</label>
+                <label for="ano"><strong>Ano:</strong></label>
                 <select name="ano" id="ano">
                     <option value="" disabled selected>-- Selecione o ano --</option>
                     <?php foreach ($anos as $item): ?>
@@ -114,8 +116,7 @@ if (isset($_POST['btn_trabalhos'])) {
                         </option>
                     <?php endforeach; ?>
                 </select>
-
-                <label for="turma">Turma:</label>
+                <label for="turma"><strong>Turma:</strong></label>
                 <select name="turma" id="turma">
                     <option value="" disabled selected>-- Selecione a turma --</option>
                     <?php foreach ($turmas as $item): ?>
@@ -125,8 +126,7 @@ if (isset($_POST['btn_trabalhos'])) {
                         </option>
                     <?php endforeach; ?>
                 </select>
-
-                <label for="aluno">Nome do aluno:</label>
+                <label for="aluno"><strong>Nome do aluno:</strong></label>
                 <input type="text" name="aluno" id="aluno" placeholder="Pesquise o Nome">
 
                 <button type="submit" name="btn_trabalhos">Pesquisar</button>

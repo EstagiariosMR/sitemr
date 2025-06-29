@@ -2,6 +2,8 @@
 
 <h1>História completa</h1>
 
+<br>
+
 <h2>Dados bibliográficos da professora Maria Manuela Rocha</h2>
 
 <ul>

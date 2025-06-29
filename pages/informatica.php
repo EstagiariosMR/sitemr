@@ -58,6 +58,12 @@
             <li>Identificar os riscos ocupacionais do ambiente de trabalho.</li>
             <li>Conhecer os conceitos de legislação básica do direito utilizados na profissão de informática.</li>
         </ul>
+        <h1>Grade Curricular</h1>
+        <br>
+        <div class="grade">
+            <img src="#" alt="">
+            <a href="#">Clique para fazer o dowload</a>
+        </div>
 
     </section>
 </main>    

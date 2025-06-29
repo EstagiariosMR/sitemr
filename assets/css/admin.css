@@ -101,7 +101,7 @@ h2 {
 }
 
 form input[type="text"], form textarea, form input[type="file"] {
-    width: 25%;
+    width: 20%;
     padding: 8px 12px;
     margin-bottom: 4px;
     margin-left: 1rem;

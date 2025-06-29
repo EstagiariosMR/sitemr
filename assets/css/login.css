@@ -15,7 +15,7 @@ body {
     width: 400px;
     height: auto;
     padding: 35px;
-    background-color: rgba(233, 231, 231, 0.582);
+    background-color: rgba(241, 241, 241, 0.847);
     backdrop-filter: blur(10px);
     border: 3px solid rgb(131, 131, 131);
     border-radius: 10px;
@@ -43,16 +43,15 @@ body {
 
 .box-login input {
     width: 100%;
-    height: 50px;
-    border: none;
-    border-radius: 15px;
-    outline: none;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fff;
     color: rgba(0, 0, 0, 0.775);
-    background-color:  rgba(177, 170, 253, 0.082);
-    
-    font-size: 16px;
-    padding: 0 15px;
     margin-bottom: 3px;
+    box-sizing: border-box;
 }
 
 .box-login input::placeholder {
@@ -120,4 +119,11 @@ input:focus{
     background-color:  rgba(177, 170, 253, 0.208);
     border:  3px solid #1c2c4cdf;
     transition: 65ms;
+}
+
+.box-login input:focus {
+    border: 2px solid #1c2c4c;
+    outline: none;
+    background: #f5f6fa;
+    transition: border 0.2s, background 0.2s;
 }

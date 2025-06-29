@@ -8,15 +8,12 @@ body {
     background-color: rgb(244, 244, 244)
 }
 
-/* ul {
-    list-style-type: none;
-} */
-
 h1{
     color:  #1c2c4c;
     text-align: left;
     margin: 25px 2px 0 75px;
     font-size: 28px;
+    font-weight: 800;
 }
 
 h2{
@@ -33,7 +30,7 @@ p {
 }
 
 a {
-    color: rgb(116, 52, 107);
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
@@ -58,8 +55,27 @@ select {
     background-color: rgb(244, 244, 244);
     color: #1c2c4c;
 }
-/* .content {
-    margin: 20px;
-} */
 
+.grade {
+    width: 100vw;
+    height: auto;
+    display: flex; /* alterado de inline para flex */
+    flex-direction: column; /* para alinhar itens verticalmente */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: small;
+    margin: 1rem;
+}
 
+.grade img{
+    width: 35rem; /* aumente conforme necessário */
+    height: 38rem; /* aumente conforme necessário */
+    display: block;
+    margin: 0 auto;
+}
+
+.grade a:hover{
+    color: rgb(156, 19, 19);
+    text-decoration: underline;
+}

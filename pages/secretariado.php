@@ -55,7 +55,15 @@
  secretariado. Fornecer alimentos técnico-jurídicos para o exercício pleno da profissional
  e vida social critica Tornar um profissional ético, proativo, responsável, com uma visão holística, flexível e de bons relacionamentos interpessoais. 
         </p>
+        <h1>Grade Curricular</h1>
+        <br>
+        <div class="grade">
+            <img src="#" alt="">
+            <a href="#">Clique para fazer o dowload</a>
+        </div>
+
     </section>
+
     <!-- <div class="table-container">
         <table>
             <colgroup>

@@ -55,8 +55,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <main>
+
+    <h1>Contatos</h1>
+
+    <div class="info-contato">
+        <div class="info-box">
+            <h2>Contato</h2>
+            <p>
+                <img class="icon-svg" src="assets/img/phone-call.svg" alt="Telefone" />
+                <strong>Telefone:</strong> (55) 3222 - 8171
+            </p>
+            <p>
+                <img class="icon-svg" src="assets/img/email.svg" alt="E-mail" />
+                <strong>E-mail:</strong> mariarocha08cre@educacao.rs.gov.br
+            </p>
+        </div>
+        <div class="info-box">
+            <h2>Redes Sociais</h2>
+            <p>
+                <img class="icon-svg" src="assets/img/instagram.svg" alt="Instagram" />
+                <a href="https://instagram.com/" target="_blank">Instagram</a>
+            </p>
+            <p>
+                <img class="icon-svg" src="assets/img/facebook.svg" alt="Facebook" />
+                <a href="https://facebook.com/" target="_blank">Facebook</a>
+            </p>
+        </div>
+    </div>
+
+    <br>
+
+    <h1>Entre em contato</h1>
+
     <div class="contato">
-        <h1>Entre em contato com a </h1>
+
         <h2>Escola Maria Rocha</h2>
         <p>Estamos aqui para ajudar! Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
         <form action="contato.php" method="post">

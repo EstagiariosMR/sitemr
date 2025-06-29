@@ -1,11 +1,7 @@
 <main>
     <h1>Infraestrutura</h1>
 
-    <section id="icones">
-		<h2 class="bi bi-bookmarks" style="color: #354698; margin: 0 5% 0 5%;"> Infraestrutura</h2>
-	</section>
-
-	<br><br>
+	<br>
 
 	<section id="infraestrutura" class="infraestrutura">
 

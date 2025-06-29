@@ -36,20 +36,22 @@
     color: #1c2c4c;
 }
 
-.contato input, .contato select {
-    padding: 10px;
-    border: 1px solid #1c2c4c;
-    border-radius: 5px;
+.contato input, .contato select, .contato textarea {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
     width: 100%;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fff;
+    box-sizing: border-box;
 }
 
-/* Adicionando borda no textarea */
-.contato textarea {
-    padding: 10px;
-    border: 1px solid #1c2c4c; /* Borda similar aos outros inputs */
-    border-radius: 5px;
-    width: 100%;
-    resize: vertical; /* Permite redimensionar apenas verticalmente */
+.contato input:focus, .contato select:focus, .contato textarea:focus {
+    border: 2px solid #1c2c4c;
+    outline: none;
+    background: #f5f6fa;
+    transition: border 0.2s, background 0.2s;
 }
 
 /* Estilo do botão submit dentro de .contato */
@@ -65,13 +67,61 @@
     background-color: #193e8a;
 }
 
-.contato input:focus{
-    background-color:  rgba(177, 170, 253, 0.208);
-    border:  3px solid #1c2c4cdf;
-    transition: 65ms;
+.info-contato {
+    display: flex;
+    justify-content: center;
+    gap: 32px;                /* mais espaço entre as boxes, opcional */
+    margin: 40px auto 30px auto;
+    max-width: 1300px;        /* aumenta o espaço total */
+    min-height: 0;
 }
-.contato select:focus{
-    background-color:  rgba(177, 170, 253, 0.208);
-    border:  2.5px solid #1c2c4cdf;
-    transition: 65ms;
+
+.info-box {
+    flex: 1 1 0;
+    max-width: 500px;         /* mais largo */
+    background: #fafbfc;
+    border: 2px solid #1c2c4c;
+    border-radius: 14px;
+    padding: 0 18px;      /* padding vertical zerado, horizontal menor */
+    color: #1c2c4c;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    min-width: 0;
+    margin: 0;
+    word-break: break-word;
+}
+
+.info-box h2 {
+    font-size: 1.5rem;         /* maior */
+    margin-bottom: 10px;
+    margin-left: 0;           /* remove margem lateral */
+    margin-right: 0;          /* remove margem lateral */
+    color: #1c2c4c;
+    text-align: center;        /* centralizado */
+    font-weight: bold;
+    word-break: normal;
+}
+
+.info-box p,
+.info-box a {
+    text-align: left;          /* garante alinhamento à esquerda */
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Adicione ao final do contato.css ou em um CSS global */
+.paginapadrao {
+    background: #fff;
+    min-height: 80vh;
+    padding: 0 0 40px 0;
+}
+
+.icon-svg {
+    display: inline-block;
+    vertical-align: middle;
+    width: 22px;
+    height: 22px;
+    margin-right: 6px;
 }

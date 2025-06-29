@@ -2,6 +2,8 @@
 
 <h1>Quem Somo?</h1>
 
+<br>
+
 <p>A Escola Estadual de Ensino Médio Professora Maria Rocha enriquece a cada dia a sua história em prol da educação. Enobrece e contribui para a cultura de nossa cidade há mais de 80 anos.</p>
 
 <p> Tem apoiado significativamente a formação integral dos jovens. A criatividade, autonomia e a pesquisa, através de uma prática educativa atualizada e assumida pelos profissionais que atuam, e pelos que já atuaram nessa nobre instituição de ensino. </p>
@@ -26,8 +28,8 @@
 
 </ul>
 
-<a href="nossa_historia">
-<Button>História completa</Button>
-</a>
+<div class="btn">
+    <a href="nossa_historia" class="btn">História completa</a>
+</div>
 
 </main>
