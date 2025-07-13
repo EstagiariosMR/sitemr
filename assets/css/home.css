@@ -12,19 +12,18 @@
 
 .slides {
     display: flex;
-    width: 100%;
-    height: 100%;
+    width: 2900px;
+    height: 768px;
     transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
     will-change: transform;
 }
 
 .slide {
     width: 100%;
-    flex-shrink: 0;
     height: 100%;
-    position: relative;
-    opacity: 1;
-    z-index: 1;
+    object-fit: contain;
+    display: block;
+    background-color: greenyellow;
 }
 
 .slide.active {

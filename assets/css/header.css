@@ -92,7 +92,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #1c2c4c;
+    background-color: #1c2c4c00;
     z-index: 1;
     border-radius: 10px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.10);
@@ -113,13 +113,13 @@
 
 .barra-azul .dropdown-content li {
     width: 100%;
-    margin: 6px 0;
+    margin: 1px;
 }
 
 .barra-azul .dropdown-content li a {
     display: block;
     width: 100%;
-    margin: 2px auto;
+    margin: 2px;
     color: white;
     text-decoration: none;
     transition: all 0.3s;
