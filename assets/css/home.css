@@ -1,29 +1,42 @@
 .slideshow-container {
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 95vh;
     overflow: hidden;
     justify-content: center;
     align-items: center;
     background-color: #1c2c4b;
+    margin: 0 auto;
     
     transition: all 4;
 }
 
 .slides {
     display: flex;
-    width: 2900px;
-    height: 768px;
+    width: 100%;
+    height: 100%;
     transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
     will-change: transform;
 }
 
 .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    display: block;
     background-color: greenyellow;
+    flex: 0 0 100%;
+}
+
+.slide img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: auto;
 }
 
 .slide.active {
@@ -41,7 +54,7 @@
     border: none;
     cursor: pointer;
     padding: 0.8rem;
-    z-index: 3; /* Garante que as setas fiquem acima dos slides */
+    z-index: 3;
 }
 
 .dropdow {
@@ -83,4 +96,83 @@
 
 .rodape p {
     color: white;
+}
+
+.titulo_noticias h1 {
+    color: white;
+}
+
+.paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    width: 100%;
+}
+
+.paginacao ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1c2c4b;
+    border-radius: 8px;
+    padding: 0;
+    list-style: none;
+    margin: auto;
+}
+
+.paginacao li {
+    display: inline;
+}
+
+.paginacao a {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    padding: 0 6px;
+    border-radius: 6px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.paginacao a:hover {
+        font-weight: 600;
+
+}
+
+.paginacao .ativa {
+    color: rgb(156, 19, 19);
+    border-bottom: 2px solid #1c2c4b;
+    font-weight: bold;
+    background: none;
+}
+
+.noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.noticia-item {
+    background: #1f3054;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+}
+
+.noticias-grid a {
+    color: white;
+    display: block;
+}
+
+.noticias-grid a:hover .noticia-item {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    color: rgb(156, 19, 19);
+}
+
+.noticias-grid a:hover .noticia-item {
+    text-decoration: underline;
 }

@@ -11,7 +11,14 @@
         <button class="next" onclick="nextSlide()">&#10095;</button>
     </section>
 
+    <div class="titulo_noticias">
+    <h1>Noticias Maria Rocha</h1>
+    </div>
+
+    <br><br>
+
     <div id="noticia-box"></div>
+    
 </main>
 
 <script src="assets/js/script.js"></script>

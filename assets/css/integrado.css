@@ -52,6 +52,7 @@
 .turma-box h3 {
     width: 100%;
     text-align: center;
+    color: #1c2c4c;
 }
 
 .form-trabalhos {
@@ -99,11 +100,16 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
 }
 
 .trabalho-box:hover {
     background-color: #eeeeee;
+    color: rgb(156, 19, 19);
+}
+
+.trabalho-box:hover p {
+    color: rgb(156, 19, 19);
 }
 
 .trabalho-box p {

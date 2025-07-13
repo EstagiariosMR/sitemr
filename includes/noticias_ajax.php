@@ -16,13 +16,13 @@ $noticias = read(
 );
 
 if($noticias && count($noticias) > 0){
-    echo '<ul>';
+    echo '<div class="noticias-grid">';
 
     foreach($noticias as $noticia){
-        echo '<li><a href="noticia/' . $noticia['id'] . '">' . htmlspecialchars($noticia['titulo']) . '</a></li>';
+        echo '<a href="noticia/' . $noticia['id'] . '"><div class="noticia-item">' . htmlspecialchars($noticia['titulo']) . '</div></a>';
     }
 
-    echo '</ul>';
+    echo '</div>';
 }
 else{
     echo '<p>Nenhuma notícia encontrada.</p>';
@@ -32,11 +32,23 @@ $totalRegistros = countAll('noticias');
 $totalPaginas = ceil($totalRegistros / $limite_por_pagina);
 
 if($totalPaginas > 1){
-    echo '<div id="paginacao">';
+    echo '<nav class="paginacao"><ul>';
 
+    // Botão Anterior
+    $prev = $pagina - 1;
+    $disabledPrev = $pagina <= 1 ? 'style="pointer-events:none;opacity:0.5;"' : '';
+    echo '<li><a href="#" class="anterior" ' . $disabledPrev . ' onclick="carregarPagina(' . $prev . '); return false;">Anterior</a></li>';
+
+    // Números das páginas
     for($i=1; $i<=$totalPaginas; $i++){
-        echo '<a href="#" onclick="carregarPagina(' . $i . '); return false;">' . $i . '</a>';
+        $active = $i == $pagina ? ' ativa' : '';
+        echo '<li><a href="#" class="pagina' . $active . '" onclick="carregarPagina(' . $i . '); return false;">' . $i . '</a></li>';
     }
 
-    echo '</div>';
+    // Botão Próxima
+    $next = $pagina + 1;
+    $disabledNext = $pagina >= $totalPaginas ? 'style="pointer-events:none;opacity:0.5;"' : '';
+    echo '<li><a href="#" class="proxima" ' . $disabledNext . ' onclick="carregarPagina(' . $next . '); return false;">Próxima</a></li>';
+
+    echo '</ul></nav>';
 }
