@@ -2,12 +2,12 @@
 require 'crud.php';
 
 $pagina = isset($_GET['pagina']) && is_numeric($_GET['pagina']) ? (int) $_GET['pagina'] : 1;
-$limite_por_pagina = 10;
+$limite_por_pagina = 12;
 $offset = ($pagina - 1) * $limite_por_pagina;
 
 $noticias = read(
     "noticias",
-    "id, titulo",
+    "id, titulo, conteudo, arquivo",
     false,
     [],
     false,
@@ -15,11 +15,53 @@ $noticias = read(
     "LIMIT $limite_por_pagina OFFSET $offset"
 );
 
+function obterCapa($arquivo){
+    if(empty($arquivo)){
+        return 'assets/img/capa-padrao.jpg';
+    }
+
+    $extensao = strtolower(pathinfo($arquivo, PATHINFO_EXTENSION));
+    $extensoesImagem = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+
+    if(in_array($extensao, $extensoesImagem)){
+        return $arquivo;
+    }
+
+    return 'assets/img/imagem1.png';
+}
+
+function gerarIntroducao($conteudo, $minCaracteres=80, $maxCaracteres=160){
+    $textoLimpo = strip_tags($conteudo);
+
+    if(mb_strlen($textoLimpo) <= $maxCaracteres){
+        return $textoLimpo;
+    }
+
+    $pos = mb_strpos($textoLimpo, '.', $minCaracteres);
+
+    if($pos !== false && $pos < $maxCaracteres){
+        return mb_substr($textoLimpo, 0, $pos + 1);
+    }
+
+    $corte = mb_substr($textoLimpo, 0, $maxCaracteres);
+    $ultimoEspaco = mb_strrpos($corte, ' ');
+
+    return mb_substr($corte, 0, $ultimoEspaco) . '...';
+}
+
 if($noticias && count($noticias) > 0){
     echo '<div class="noticias-grid">';
 
     foreach($noticias as $noticia){
-        echo '<a href="noticia/' . $noticia['id'] . '"><div class="noticia-item">' . htmlspecialchars($noticia['titulo']) . '</div></a>';
+        $capa = obterCapa($noticia['arquivo']);
+        $introducao = gerarIntroducao($noticia['conteudo']);
+
+        echo '<a href="noticia/' . $noticia['id'] . '">';
+        echo '<div class="noticia-item">';
+        echo '<img src="' . $capa . '" alt="Capa">';
+        echo '<div><strong>' . htmlspecialchars($noticia['titulo']) . '</strong></div>';
+        echo '<div>' . htmlspecialchars($introducao) . '</div>';
+        echo '</div></a>';
     }
 
     echo '</div>';
