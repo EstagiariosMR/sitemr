@@ -1,5 +1,5 @@
 <?php
-function salvarArquivo($arquivo, $ano='', $turma='', $aluno='', $pastaBase='uploads'){
+function salvarArquivo($arquivo, $ano='', $turma='', $aluno='', $pastaBase='uploads', $tipoConteudo='noticia'){
     if(empty($arquivo['name']) || $arquivo['error'] !== 0){
         return null;
     }
@@ -7,25 +7,22 @@ function salvarArquivo($arquivo, $ano='', $turma='', $aluno='', $pastaBase='uplo
     $extensao = strtolower(pathinfo($arquivo['name'], PATHINFO_EXTENSION));
 
     $tiposImagem = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
-    $tipoArquivo = '';
+    // $tipoArquivo = '';
 
-    if($extensao === 'pdf'){
-        $tipoArquivo = 'trabalhos';
-    }
-    elseif(in_array($extensao, $tiposImagem)){
-        $tipoArquivo = 'imagens';
-    }
-    else{
+    if($extensao !== 'pdf' && !in_array($extensao, $tiposImagem)){
         return null;
     }
-
-    if($tipoArquivo === 'trabalhos'){
-        $nomeFinal = $aluno . '.pdf';
-        $pastaDestino = "$pastaBase/trabalhos/$ano/$turma";
-    }
-    else{
-        $nomeFinal = $arquivo['name'];
-        $pastaDestino = "$pastaBase/imagens";
+    
+    switch($tipoConteudo){
+        case 'trabalho':
+            $pastaDestino = "$pastaBase/trabalhos/$ano/$turma";
+            $nomeFinal = $aluno . '.pdf';
+            break;
+        case 'noticia':
+        default:
+            $pastaDestino = "$pastaBase/noticias";
+            $nomeFinal = $arquivo['name'];
+            break;
     }
 
     if(!is_dir($pastaDestino)){

@@ -28,16 +28,31 @@ if(!$noticia){
         <h1><?= htmlspecialchars($noticia['titulo']); ?></h1>
         <p><em><?= date('d/m/Y H:i', strtotime($noticia['data_publicacao'])); ?></em></p>
 
-        <?php
-        $imagem = buscarImagem($noticia['imagem']);
-        
-        if($imagem): ?>
-            <img src="<?= $imagem ?>" alt="Imagem da notícia">
-        <?php endif; ?>
-
         <div>
             <?= htmlspecialchars($noticia['conteudo']); ?>
         </div>
+
+        <?php
+        $arquivo = $noticia['arquivo'] ?? null;
+
+        if($arquivo){
+            $extensao = strtolower(pathinfo($arquivo, PATHINFO_EXTENSION));
+
+            if(in_array($extensao, ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'])){
+                $src = buscarImagem($arquivo);
+
+                if($src): ?>
+                    <img src="<?= htmlspecialchars($src) ?>" alt="Imagem da notícia">
+                <?php
+                endif;
+            }
+            elseif($extensao === 'pdf'){
+                ?>
+                <p>Documento disponível: <a href="<?= htmlspecialchars($arquivo) ?>" target="_blank" rel="noopener noreferrer">Abrir PDF</a></p>
+                <?php
+            }
+        } 
+        ?>
     </article>
 
     <div>

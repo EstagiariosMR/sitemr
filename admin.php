@@ -104,7 +104,7 @@ function formNoticia($id = null) {
     echo "<form method='POST' enctype='multipart/form-data'>";
     echo "<input type='text' name='titulo' placeholder='Título' value='" . htmlspecialchars($noticia['titulo'] ?? '') . "' required><br><br>";
     echo "<textarea name='conteudo' placeholder='Conteúdo' rows='5'>" . htmlspecialchars($noticia['conteudo'] ?? '') . "</textarea><br><br>";
-    echo "<input type='file' name='imagem' accept='image/*'><br><br>";
+    echo "<input type='file' name='arquivo' accept='.jpg,.jpeg,.png,.pdf'><br><br>";
     echo "<button type='submit' name='btn_noticias'>" . ($id ? "Atualizar" : "Publicar") . "</button>";
     echo "</form><hr>";
 }
@@ -112,11 +112,11 @@ function formNoticia($id = null) {
 function salvarNoticia($id = null) {
     $titulo = $_POST['titulo'];
     $conteudo = $_POST['conteudo'];
-    $imagem = $_FILES['imagem'] ?? null;
-    $caminho = $imagem && $imagem['error'] === UPLOAD_ERR_OK ? salvarArquivo($imagem) : null;
+    $arquivo = $_FILES['arquivo'] ?? null;
+    $caminho = $arquivo && $arquivo['error'] === UPLOAD_ERR_OK ? salvarArquivo($arquivo, 'noticia') : null;
 
     $dados = ['titulo' => $titulo, 'conteudo' => $conteudo];
-    if ($caminho) $dados['imagem'] = $caminho;
+    if ($caminho) $dados['arquivo'] = $caminho;
 
     $id
         ? update('noticias', $dados, 'id = :id', ['id' => $id])
@@ -174,7 +174,7 @@ function salvarTrabalho($id = null) {
     $aluno = $_POST['aluno'];
     $arquivo = $_FILES['arquivo'];
     $alunoFormatado = formatarNomeAluno($aluno);
-    $caminho = $arquivo && $arquivo['error'] === UPLOAD_ERR_OK ? salvarArquivo($arquivo, $ano, $turma, $alunoFormatado, 'uploads') : null;
+    $caminho = $arquivo && $arquivo['error'] === UPLOAD_ERR_OK ? salvarArquivo($arquivo, $ano, $turma, $alunoFormatado, 'uploads', 'trabalho') : null;
 
     if (!$id && !$caminho) {
         echo "Erro ao salvar o arquivo.";
