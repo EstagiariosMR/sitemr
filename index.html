@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Teste - Noticias</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: white;
+		}
+
+		.grid-container {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 2vw;
+			width: 90vw;
+			max-width: 1200px;
+			margin: 4vh auto;
+			justify-content: center;
+		}
+
+		.box {
+			background-color: #1f3054;
+			border-radius: 1em;
+			padding: 1em;
+			height: auto;
+			text-align: center;
+			box-sizing: border-box;
+		}
+
+		.box:hover {
+			transform: scale(1.03);
+			cursor: pointer;
+		}
+
+		.box:hover .ler-mais p {
+			color: rgb(156, 19, 19);
+			text-decoration: underline;
+		}
+
+		.imagem {
+			width: 100%;
+			height: 20vw;
+			max-height: 25vh;
+			background-color: #ccc;
+			border-radius: 0.5em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #f2f2f2e7;
+			font-weight: bold;
+		}
+
+		.titulo h1 {
+			font-size: 1.2em;
+			color: #d4d4d4e7;
+		}
+
+		.texto p {
+			color: #a5a5a5e7;
+			font-size: 1em;
+			text-decoration: none;
+		}
+
+		a.box-link {
+			text-decoration: none;
+			color: inherit;
+		}
+	</style>
+</head>
+<body>
+    <div class="grid-container">
+        <a href="noticia.php" class="box-link">
+            <div class="box">
+                <div class="imagem">IMG</div>
+                <div class="titulo">
+                    <h1>Este é um título com exatamente cinquenta caracteres</h1>
+                </div>
+                <div class="texto">
+                    <p>Este parágrafo contém exatamente cem caracteres. Ele serve para demonstrar o layout com texto maior.</p>
+                </div>
+                <div class="ler-mais">
+                    <p>Ler mais</p>
+                </div>
+            </div>
+        </a>
+        <a href="noticia.php" class="box-link">
+            <div class="box">
+                <div class="imagem">IMG</div>
+                <div class="titulo">
+                    <h1>Este é um título com exatamente cinquenta caracteres</h1>
+                </div>
+                <div class="texto">
+                    <p>Este parágrafo contém exatamente cem caracteres. Ele serve para demonstrar o layout com texto maior.</p>
+                </div>
+                <div class="ler-mais">
+                    <p>Ler mais</p>
+                </div>
+            </div>
+        </a>
+        <a href="noticia.php" class="box-link">
+            <div class="box">
+                <div class="imagem">IMG</div>
+                <div class="titulo">
+                    <h1>Este é um título com exatamente cinquenta caracteres</h1>
+                </div>
+                <div class="texto">
+                    <p>Este parágrafo contém exatamente cem caracteres. Ele serve para demonstrar o layout com texto maior.</p>
+                </div>
+                <div class="ler-mais">
+                    <p>Ler mais</p>
+                </div>
+            </div>
+        </a>
+        <a href="noticia.php" class="box-link">
+            <div class="box">
+                <div class="imagem">IMG</div>
+                <div class="titulo">
+                    <h1>Este é um título com exatamente cinquenta caracteres</h1>
+                </div>
+                <div class="texto">
+                    <p>Este parágrafo contém exatamente cem caracteres. Ele serve para demonstrar o layout com texto maior.</p>
+                </div>
+                <div class="ler-mais">
+                    <p>Ler mais</p>
+                </div>
+            </div>
+        </a>
+        <a href="noticia.php" class="box-link">
+            <div class="box">
+                <div class="imagem">IMG</div>
+                <div class="titulo">
+                    <h1>Este é um título com exatamente cinquenta caracteres</h1>
+                </div>
+                <div class="texto">
+                    <p>Este parágrafo contém exatamente cem caracteres. Ele serve para demonstrar o layout com texto maior.</p>
+                </div>
+                <div class="ler-mais">
+                    <p>Ler mais</p>
+                </div>
+            </div>
+        </a>
+        <a href="noticia.php" class="box-link">
+            <div class="box">
+                <div class="imagem">IMG</div>
+                <div class="titulo">
+                    <h1>Este é um título com exatamente cinquenta caracteres</h1>
+                </div>
+                <div class="texto">
+                    <p>Este parágrafo contém exatamente cem caracteres. Ele serve para demonstrar o layout com texto maior.</p>
+                </div>
+                <div class="ler-mais">
+                    <p>Ler mais</p>
+                </div>
+            </div>
+        </a>
+    </div>
+	<script>
+    function limitarTexto(elemento, limite) {
+        const textoOriginal = elemento.textContent;
+        if (textoOriginal.length > limite) {
+            elemento.textContent = textoOriginal.slice(0, limite) + "...";
+        }
+    }
+
+    // Seleciona todos os títulos e parágrafos
+    const titulos = document.querySelectorAll('.titulo h1');
+    const paragrafos = document.querySelectorAll('.texto p');
+
+    // Aplica os limites em todos
+    titulos.forEach(titulo => limitarTexto(titulo, 30));
+    paragrafos.forEach(paragrafo => limitarTexto(paragrafo, 75));
+</script>
+</body>
+</html>

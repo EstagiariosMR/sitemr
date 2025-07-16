@@ -1,13 +1,13 @@
 <?php
-$host = 'localhost';
-$db = 'escola';
-$user = 'root';
-$pass = '';
+// $host = 'localhost';
+// $db = 'escola';
+// $user = 'root';
+// $pass = '';
 
-// $host = 'mysql.mariarocha.org.br';
-// $db = 'mariarocha04';
-// $user = 'mariarocha04';
-// $pass = 'tecnico2025';
+$host = 'mysql.mariarocha.org.br';
+$db = 'mariarocha04';
+$user = 'mariarocha04';
+$pass = 'tecnico2025';
 
 $charset = 'utf8mb4';
 

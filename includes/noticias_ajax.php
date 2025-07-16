@@ -27,7 +27,7 @@ function obterCapa($arquivo){
         return $arquivo;
     }
 
-    return 'assets/img/imagem1.png';
+        return 'assets/img/capa-padrao.jpg';
 }
 
 function gerarIntroducao($conteudo, $minCaracteres=80, $maxCaracteres=160){
@@ -58,9 +58,9 @@ if($noticias && count($noticias) > 0){
 
         echo '<a href="noticia/' . $noticia['id'] . '">';
         echo '<div class="noticia-item">';
-        echo '<img src="' . $capa . '" alt="Capa">';
-        echo '<div><strong>' . htmlspecialchars($noticia['titulo']) . '</strong></div>';
-        echo '<div>' . htmlspecialchars($introducao) . '</div>';
+        echo '<div class="imagem"><img src="' . $capa . '" alt="Capa"> </div>';
+        echo '<div class="overlay"><div class="titulo"><h2>' . htmlspecialchars($noticia['titulo']) . '</h2></div>';
+        echo '<div class="introducao"><p>' . htmlspecialchars($introducao) . '</p></div></div>';
         echo '</div></a>';
     }
 
@@ -94,3 +94,15 @@ if($totalPaginas > 1){
 
     echo '</ul></nav>';
 }
+?>
+<style>
+.noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
+    width: 90vw;
+    max-width: 1200px;
+    margin: 4vh auto;
+    justify-content: center;
+}
+</style>
