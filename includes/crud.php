@@ -31,7 +31,12 @@ function create($tabela, $dados){
         }
     }
     catch(PDOException $e){
-        die("Erro no banco de dados: " . $e->getMessage());
+        if(strpos($e->getMessage(), 'Limite de 4 imagens no carrossel atingido') !== false){
+            return ['warning' => 'Limite de 4 imagens no carrossel atingido'];
+        }
+        
+        echo "Erro ao inserir no banco de dados: " . $e->getMessage();
+        return false;
     }
 }
 
