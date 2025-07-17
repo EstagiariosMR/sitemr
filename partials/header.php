@@ -39,10 +39,13 @@
                             <li><a href="/sitemr/infraestrutura">Infraestrutura</a></li>
                         </ul>
                     </li>
-                    <!-- --------------------------------------------------------------------- -->
-                    <!-- Corrigir aqui com dropdown -->
-                    <li><a href="/sitemr/integral">Ensino Médio <br>em Tempo Integral</a></li>
-                    <!-- --------------------------------------------------------------------- -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Ensino Médio</a>
+                        <ul class="dropdown-content">
+                            <li><a href="/sitemr/medio_diurno">Médio Diurno</a></li>
+                            <li><a href="/sitemr/medio_noturno">Médio Noturno</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/sitemr/integrado">Curso Técnico em Informática <br>Integrado ao Ensino Médio </a></li>
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Curso Técnico Subsequente<br> (Educação Profissional)</a>
