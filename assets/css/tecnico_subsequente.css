@@ -1,0 +1,37 @@
+table {
+    margin: auto;
+    width: 90%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #1c2c4b;
+    color: #fff;
+}
+
+td:first-child {
+    font-weight: bold;
+    text-align: center;
+    width: 60px;
+    background-color: #f0f0f0;
+}
+
+.semestre-header {
+    background-color: #1c2c4b;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.ch {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    text-align: center;
+}

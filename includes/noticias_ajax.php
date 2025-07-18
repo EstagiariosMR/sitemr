@@ -30,6 +30,10 @@ function obterCapa($arquivo){
         return 'assets/img/capa-padrao.jpg';
 }
 
+function gerarTitulo ($titutlo, $minCaracteres=20, $maxCaracteres=50){
+    
+}
+
 function gerarIntroducao($conteudo, $minCaracteres=80, $maxCaracteres=160){
     $textoLimpo = strip_tags($conteudo);
 
@@ -95,7 +99,7 @@ if($totalPaginas > 1){
     echo '</ul></nav>';
 }
 ?>
-<style>
+<!-- <style>
 .noticias-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -105,4 +109,4 @@ if($totalPaginas > 1){
     margin: 4vh auto;
     justify-content: center;
 }
-</style>
+</style> -->

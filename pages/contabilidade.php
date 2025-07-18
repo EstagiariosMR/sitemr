@@ -39,60 +39,76 @@
         </p>
         <h1>Grade Curricular</h1>
         <br>
-        <div class="grade">
-            <img src="#" alt="">
-            <a href="#">Clique para fazer o dowload</a>
-        </div>
+<table>
+    <tr>
+      <th>CH</th>
+      <th>1º SEMESTRE</th>
+      <th>CH</th>
+      <th>2º SEMESTRE</th>
+      <th>CH</th>
+      <th>3º SEMESTRE</th>
+    </tr>
+
+    <tr>
+      <td class="ch">120h</td><td>CONTABILIDADE GERAL*</td>
+      <td class="ch">120h</td><td>CONTABILIDADE COMERCIAL*</td>
+      <td class="ch">30h</td><td>CONTABILIDADE INDUSTRIAL</td>
+    </tr>
+    <tr>
+      <td class="ch">30h</td><td>DIREITO E LEGISLAÇÃO I*</td>
+      <td class="ch">30h</td><td>CONTABILIDADE PÚBLICA</td>
+      <td class="ch">15h</td><td>DIREITO E LEGISLAÇÃO III</td>
+    </tr>
+    <tr>
+      <td class="ch">15h</td><td>ORGANIZAÇÃO E TÉCNICAS COMERCIAIS I*</td>
+      <td class="ch">30h</td><td>DIREITO E LEGISLAÇÃO II*</td>
+      <td class="ch">30h</td><td>ORGANIZAÇÃO E TÉCNICAS COMERCIAIS III</td>
+    </tr>
+    <tr>
+      <td class="ch">30h</td><td>ESTATÍSTICA APLICADA À CONTABILIDADE I*</td>
+      <td class="ch">30h</td><td>ORGANIZAÇÃO E TÉCNICAS COMERCIAIS II*</td>
+      <td class="ch">30h</td><td>PORTUGUÊS INSTRUMENTAL</td>
+    </tr>
+    <tr>
+      <td class="ch">30h</td><td>MATEMÁTICA FINANCEIRA I*</td>
+      <td class="ch">30h</td><td>ESTATÍSTICA APLICADA À CONTABILIDADE II</td>
+      <td class="ch">15h</td><td>METODOLOGIA DA PESQUISA III</td>
+    </tr>
+    <tr>
+      <td class="ch">30h</td><td>INFORMÁTICA APLICADA À CONTABILIDADE I*</td>
+      <td class="ch">30h</td><td>MATEMÁTICA FINANCEIRA II</td>
+      <td class="ch">30h</td><td>ANÁLISE DE BALANÇO</td>
+    </tr>
+    <tr>
+      <td class="ch">30h</td><td>INGLÊS INSTRUMENTAL</td>
+      <td class="ch">30h</td><td>INFORMÁTICA APLICADA À CONTABILIDADE II</td>
+      <td class="ch">15h</td><td>GESTÃO PÚBLICA</td>
+    </tr>
+    <tr>
+      <td class="ch">30h</td><td>RELAÇÕES HUMANAS E ÉTICA</td>
+      <td class="ch">15h</td><td>METODOLOGIA DA PESQUISA II*</td>
+      <td class="ch">30h</td><td>ECONOMIA E MERCADO II</td>
+    </tr>
+    <tr>
+      <td class="ch">15h</td><td>METODOLOGIA DA PESQUISA I*</td>
+      <td class="ch">15h</td><td>GESTÃO EMPRESARIAL</td>
+      <td class="ch">30h</td><td>SEGURANÇA DO TRABALHO</td>
+    </tr>
+    <tr>
+      <td class="ch">30h</td><td>EMPREENDEDORISMO</td>
+      <td class="ch">30h</td><td>ECONOMIA E MERCADO I*</td>
+      <td class="ch">105h</td><td>PRÁTICA SUPERVISIONADA</td>
+    </tr>
+    <tr>
+      <td></td><td></td>
+      <td></td><td></td>
+      <td class="ch">30h</td><td>ORIENTAÇÃO PROFISSIONAL</td>
+    </tr>
+  </table>
+
+  <br>  <br>
+
 
             </section>
-        <!-- <ul>
-            <li>Operar, instalar, configurar e fazer manutenção de sistemas operacionais e aplicativos.</li>
-            <li>Construir, instalar e realizar a manutenção de banco de dados.</li>
-            <li>Instalar, configurar e fazer manutenção de computadores.</li>
-            <li>Construir, instalar e realizar a manutenção de softwares.</li>
-            <li>Instalar, configurar e operar redes de computadores.</li>
-            <li>Elaborar, implementar e monitorar projetos de sistemas web.</li>
-            <li>Elaborar e avaliar projetos de empreendedorismo na área da informática.</li>
-            <li>Elaborar projetos de pesquisa aplicando metodologia científica.</li>
-            <li>Identificar os riscos ocupacionais do ambiente de trabalho.</li>
-            <li>Conhecer os conceitos de legislação básica do direito utilizados na profissão de informática.</li>
-        </ul>
-
-    <div class="table-container">
-        <table>
-            <colgroup>
-                <col>
-                <col>
-                <col>
-                <col>
-                <col>
-                <col>
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Disciplina</th>
-                    <th>CH</th>
-                    <th>Disciplina</th>
-                    <th>CH</th>
-                    <th>Disciplina</th>
-                    <th>CH</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Contabilidade Geral</td><td>120 horas</td><td>Contabilidade Comercial</td><td>120 horas</td><td>Contabilidade Industrial</td><td>30 horas</td></tr>
-                <tr><td>Direito e Legislação I</td><td>30 horas</td><td>Contabilidade Pública</td><td>30 horas</td><td>Direito e Legislação III</td><td>15 horas</td></tr>
-                <tr><td>Organização e Técnicas Comerciais I</td><td>15horas</td><td>Direito e Legislação II</td><td>30 horas</td><td>Organização e Técnicas Comerciais III</td><td>30 horas</td></tr>
-                <tr><td>Estatística Aplicada a Contabilidade I</td><td>30 horas</td><td>Organização e Técnicas Comerciais II</td><td>30 horas</td><td>Português Instrumental</td><td>0 horas</td></tr>
-                <tr><td>Matemática Financeira I</td><td>30 horas</td><td>Estatística Aplicada a Contabilidade II</td><td>30 horas</td><td>Metodologia da Pesquisa III</td><td>15 horas</td></tr>
-				<tr><td>Informática Aplicada a Contabilidade I</td><td>30 horas</td><td>Matemática Financeira II</td><td>30 horas</td><td>Análise de Balanço</td><td>30 horas</td></tr>
-				<tr><td>Inglês Instrumental</td><td>30 horas</td><td>Informática Aplicada a Contabilidade II</td><td>30 horas</td><td>Gestão Pública</td><td>30 horas</td></tr>
-				<tr><td>Relações Humanas e Ética</td><td>30 horas</td><td>Metodologia da Pesquisa II</td><td>15 horas</td><td>Economia e Mercado II</td><td>30 horas</td></tr>
-				<tr><td>Metodologia da Pesquisa I</td><td>15 horas</td><td>Gestão Empresarial</td><td>15 horas</td><td>Segurança no Trabalho</td><td>30 horas</td></tr>
-                <tr><td>Empreendedorismo</td><td>30 horas</td><td>Economia e Mercado I</td><td>30 horas</td><td>Prática Supervisionada</td><td>105 horas</td></tr>
-				<tr><td></td><td></td><td></td><td></td><td>Orientação Profissional</td><td>30 horas</td></tr>
-
-            </tbody>
-        </table>
-    </div> -->
-
+        
 </main>

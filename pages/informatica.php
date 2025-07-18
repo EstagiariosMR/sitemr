@@ -60,10 +60,73 @@
         </ul>
         <h1>Grade Curricular</h1>
         <br>
-        <div class="grade">
-            <img src="#" alt="">
-            <a href="#">Clique para fazer o dowload</a>
-        </div>
+<table>
+  <tr>
+    <th>CH</th><th>1º SEMESTRE</th>
+    <th>CH</th><th>2º SEMESTRE</th>
+    <th>CH</th><th>3º SEMESTRE</th>
+    <th>CH</th><th>4º SEMESTRE</th>
+  </tr>
+
+  <tr>
+    <td class="ch">100h</td>
+    <td>PROGRAMAÇÃO I*</td>
+    <td class="ch">100h</td><td>PROGRAMAÇÃO II*</td>
+    <td class="ch">100h</td><td>PROGRAMAÇÃO III</td>
+    <td class="ch">60h</td><td>METODOLOGIA DA PESQUISA II</td>
+</tr>
+  <tr>
+    <td class="ch">60h</td>
+    <td>MONTAGEM E MANUTENÇÃO I*</td>
+    <td class="ch">80h</td><td>MONTAGEM E MANUTENÇÃO II*</td>
+    <td class="ch">80h</td><td>MONTAGEM E MANUTENÇÃO III</td>
+    <td class="ch">40h</td><td>ORIENTAÇÃO DE ESTÁGIO</td>
+</tr>
+  <tr>
+    <td class="ch">100h</td>
+    <td>SISTEMAS APLICATIVOS I*</td>
+    <td class="ch">100h</td>
+    <td>SISTEMAS APLICATIVOS II</td>
+    <td class="ch">60h</td>
+    <td>LINUX E APLICATIVOS</td>
+    <td class="ch">40h</td>
+    <td>PRÁTICA SUPERVISIONADA EM INFORMÁTICA</td>
+</tr>
+  <tr><td class="ch">100h</td>
+  <td>EDITORAÇÃO GRÁFICA</td>
+  <td class="ch">80h</td><td>PROGRAMAÇÃO PARA WEB I*</td>
+  <td class="ch">80h</td><td>PROGRAMAÇÃO PARA WEB II</td>
+  <td class="ch">20h</td><td>PORTUGUÊS INSTRUMENTAL II</td>
+</tr>
+  <tr>
+    <td class="ch">40h</td>
+    <td>INTERNET</td><td class="ch">40h</td>
+    <td>FUNDAMENTOS DE ADMINISTRAÇÃO</td>
+    <td class="ch">60h</td><td>ESTATÍSTICA</td>
+    <td></td><td></td>
+</tr>
+  <tr>
+    <td class="ch">40h</td>
+    <td>CONTABILIDADE GERAL</td>
+    <td class="ch">40h</td>
+    <td>DIREITO E LEGISLAÇÃO</td>
+    <td class="ch">40h</td>
+    <td>PORTUGUÊS INSTRUMENTAL I*</td>
+    <td></td><td></td>
+</tr>
+  <tr>
+    <td class="ch">40h</td>
+    <td>ÉTICA E RELAÇÕES HUMANAS</td>
+    <td class="ch">40h</td>
+    <td>SEGURANÇA DO TRABALHO</td>
+    <td class="ch">40h</td>
+    <td>INGLÊS INSTRUMENTAL</td>
+    <td class="ch">20h</td>
+    <td>METODOLOGIA DA PESQUISA I*</td>
+</tr>
+</table>
+
+  <br>  <br>
 
     </section>
 </main>    

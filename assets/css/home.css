@@ -163,18 +163,18 @@
     border-radius: 1em;
     background-color: transparent;
     padding: 0;
-    width: 250px;
+    width: 90%;
     height: auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s;
 
-    display: inline;
+    display: inline-block;
     justify-content: center;
     align-items: center;
 }
 
 .noticia-item:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
     cursor: pointer;
 }
 
@@ -199,7 +199,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 55%;
+    height: 52%;
     background-color: rgba(31, 48, 84, 0.719);
     color: white;
     padding: 1em;
@@ -212,7 +212,7 @@
 }
 
 .overlay .titulo h2 {
-    font-size: 1.1em;
+    font-size: 1.5em;
     margin: 0;
     color: #d4d4d4e7;
 }

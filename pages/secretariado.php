@@ -57,48 +57,97 @@
         </p>
         <h1>Grade Curricular</h1>
         <br>
-        <div class="grade">
-            <img src="#" alt="">
-            <a href="#">Clique para fazer o dowload</a>
-        </div>
+<table>
+  <tr>
+    <th>CH</th><th>1º SEMESTRE</th>
+    <th>CH</th><th>2º SEMESTRE</th>
+    <th>CH</th><th>3º SEMESTRE</th>
+  </tr>
+
+  <tr>
+    <td class="ch">30h</td>
+    <td>DIREITO E LEGISLAÇÃO I*</td>
+    <td class="ch">30h</td><td>DIREITO E LEGISLAÇÃO II</td>
+    <td class="ch">30h</td><td>INFORMÁTICA III</td>
+</tr>
+  <tr>
+    <td class="ch">30h</td>
+    <td>ESTATÍSTICA I*</td>
+    <td class="ch">30h</td>
+    <td>ESTATÍSTICA II</td>
+    <td class="ch">30h</td>
+    <td>PORTUGUÊS INSTRUMENTAL II</td>
+</tr>
+  <tr>
+    <td class="ch">45h</td>
+    <td>INFORMÁTICA I*</td>
+    <td class="ch">45h</td>
+    <td>INFORMÁTICA II*</td>
+    <td class="ch">30h</td>
+    <td>METODOLOGIA DA PESQUISA III</td>
+</tr>
+  <tr>
+    <td class="ch">45h</td>
+    <td>INGLÊS INSTRUMENTAL</td>
+    <td class="ch">45h</td>
+    <td>ESPANHOL INSTRUMENTAL</td>
+    <td class="ch">15h</td>
+    <td>ORIENTAÇÃO DE ESTÁGIO CURRICULAR</td>
+</tr>
+  <tr>
+    <td class="ch">30h</td>
+    <td>PORTUGUÊS INSTRUMENTAL I*</td>
+    <td class="ch">30h</td>
+    <td>MATEMÁTICA FINANCEIRA II</td>
+    <td class="ch">30h</td>
+    <td>SEGURANÇA DO TRABALHO</td>
+</tr>
+  <tr>
+    <td class="ch">30h</td>
+    <td>MATEMÁTICA FINANCEIRA I*</td>
+    <td class="ch">15h</td>
+    <td>METODOLOGIA DA PESQUISA II*</td>
+    <td class="ch">30h</td>
+    <td>PRÁTICA SUPERVISIONADA EM SECRETARIADO</td>
+</tr>
+  <tr>
+    <td class="ch">15h</td>
+    <td>METODOLOGIA DA PESQUISA I*</td>
+    <td class="ch">30h</td>
+    <td>ORGANIZAÇÃO EMPRESARIAL II</td>
+    <td></td><td></td>
+</tr>
+  <tr>
+    <td class="ch">30h</td>
+    <td>ORGANIZAÇÃO EMPRESARIAL I*</td>
+    <td class="ch">45h</td>
+    <td>TÉCNICAS EM SECRETARIADO II</td>
+    <td></td><td></td>
+</tr>
+  <tr>
+    <td class="ch">30h</td>
+    <td>ÉTICA E RELAÇÕES HUMANAS</td>
+    <td class="ch">30h</td>
+    <td>PSICOLOGIA</td>
+    <td></td><td></td></tr>
+  <tr>
+    <td class="ch">45h</td>
+    <td>TÉCNICAS EM SECRETARIADO I*</td>
+    td class="ch">30h</td>
+    <td>REDAÇÃO EMPRESARIAL</td>
+    <td></td><td></td>
+</tr>
+  <tr>
+    <td class="ch">30h</td>
+    <td>CONTABILIDADE GERAL</td>
+    <td class="ch">15h</td>
+    <td>ORGANIZAÇÃO DE EVENTOS</td>
+    <td></td><td></td>
+</tr>
+</table>
+
+<br> <br>
 
     </section>
-
-    <!-- <div class="table-container">
-        <table>
-            <colgroup>
-                <col>
-                <col>
-                <col>
-                <col>
-                <col>
-                <col>
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Disciplina</th>
-                    <th>CH</th>
-                    <th>Disciplina</th>
-                    <th>CH</th>
-                    <th>Disciplina</th>
-                    <th>CH</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Direito e Legislação I</td><td>30 horas</td><td>Direito e Legislação II</td><td>30 horas</td><td>Informática III</td><td>30 horas</td></tr>
-                <tr><td>Estastística I</td><td>30 horas</td><td>Estastística II</td><td>30 horas</td><td>Portugês Instrumental II</td><td>30 horas</td></tr>
-                <tr><td>Informática I</td><td>45 horas</td><td>Informática II</td><td>45 horas</td><td>Metodologia da Pesquisa III</td><td>30 horas</td></tr>
-                <tr><td>Inglês Instrumental</td><td>45 horas</td><td>Espanhol Instrumental</td><td>45 horas</td><td>Orientação do Estágio Curricular</td><td>15 horas</td></tr>
-                <tr><td>Portugês Instrumental I</td><td>30 horas</td><td>Matemática Financeira II</td><td>30 horas</td><td>Segurança no Trabalho><td>30 horas</td></tr>
-				<tr><td>Matemática Financeira I</td><td>30 horas</td><td>Metodologia da Pesquisa II</td><td>15 horas</td><td>Prática Supervisionada em Secretariado</td><td>30 horas</td></tr>
-				<tr><td>Metodologia da Pesquisa I</td><td>15 horas</td><td>Organização Empresarial II</td><td>30 horas</td><td></td><td></td></tr>
-				<tr><td>Organização Empresarial I</td><td>30 horas</td><td>Técnicas em Secretariado II</td><td>45 horas</td><td></td><td></td></tr>
-				<tr><td>Ética e Relações Humanas</td><td>30 horas</td><td>Psicologia</td><td>30 horas</td><td></td><td></td></tr>
-                <tr><td>Técnicas em Secretariado I</td><td>45 horas</td><td>Redação Empresarial</td><td>30 horas</td><td></td><td></td></tr>
-				<tr><td>Contabilidade Geral</td><td>30 horas</td><td>Organização de Eventos</td><td>15 horas</td><td></td><td></td></tr>
-
-            </tbody>
-        </table>
-    </div> -->
 
 </main>
