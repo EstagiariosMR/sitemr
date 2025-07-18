@@ -56,6 +56,12 @@ select {
     color: #1c2c4c;
 }
 
+img{
+    margin: auto;
+    display: block;
+    margin: 2rem auto;
+}
+
 .grade {
     width: 100vw;
     height: auto;
@@ -81,8 +87,23 @@ select {
 }
 
 .data {
-    font-size: small;
+    font-size: x-small;
     color: #1c2c4c;
     text-align: justify;
-    margin: 1px 80px 15px 75px;
+}
+
+.voltar a{
+    margin: 25% auto;
+    color: #000000;
+    border: none;
+    padding: 0.5rem 1.8rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.voltar a:hover {
+    transform: translateY(-3px);
 }

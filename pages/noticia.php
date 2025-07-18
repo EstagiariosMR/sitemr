@@ -55,7 +55,7 @@ if(!$noticia){
         ?>
     </article>
 
-    <div>
+    <div class="voltar">
         <a href="/sitemr/">Voltar</a>
     </div>
 </main>
