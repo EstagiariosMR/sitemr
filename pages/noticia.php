@@ -26,10 +26,10 @@ if(!$noticia){
 <main>
     <article>
         <h1><?= htmlspecialchars($noticia['titulo']); ?></h1>
-        <p><em><?= date('d/m/Y H:i', strtotime($noticia['data_publicacao'])); ?></em></p>
+        <div class="data"><p><em><?= date('d/m/Y H:i', strtotime($noticia['data_publicacao'])); ?></em></p></div>
 
         <div>
-            <?= htmlspecialchars($noticia['conteudo']); ?>
+            <p><?= htmlspecialchars($noticia['conteudo']); ?></p>
         </div>
 
         <?php

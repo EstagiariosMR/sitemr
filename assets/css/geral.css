@@ -79,3 +79,10 @@ select {
     color: rgb(156, 19, 19);
     text-decoration: underline;
 }
+
+.data {
+    font-size: small;
+    color: #1c2c4c;
+    text-align: justify;
+    margin: 1px 80px 15px 75px;
+}
