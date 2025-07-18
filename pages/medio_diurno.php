@@ -1,3 +1,9 @@
 <main>
     <h1>Ensino Médio Diurno</h1>
+
+    <h2>Objetivo do Curso</h2>
+
+    <p>Desenvolver o senso crítico no educando, possibilitando-lhe a analise da realidade e tornando-o capaz de agir e interagir no meio que vive, como cidadão responsável, para uma sociedade mais justa, humana e democrática Propiciar a formação para a vida e para a convivência, no exercício cotidiano dos direitos humanos como forma de vida e organização social, politica, econômica e cultural Incluir os(as) educandos(a)s com deficiência, transtornos globais do desenvolvimento e de altas habilidades. E, também, oferecer condições para que possa desenvolver plenamente suas potencialidades através do processo de construção do conhecimento e da sua socialização no ambiente escolar Desenvolver e aprimorar as habilidades e competências dos(as) educandos(as) que buscam a Escola para concluir a Educação básica Oportunizar através da reflexão, da autonomia e das experiências significativas a constituição de sujeitos comprometidos com o meio, com a transformação da realidade e com efetivo exercício da cidadania Desenvolver uma educação transformadora, através do estimulo das potencialidades do(a) educando(a) promovendo ações desafiadoras que possibilitem o desenvolvimento de novas habilidades. Assim, visando à formação humana integral, serão consideradas as inteligências múltiplas para que o(a) educando(a) desenvolva e capacite suas potencialidades. A partir desses objetivos, a transformação promovida pela Escola deve desenvolver a autonomia do sujeito para refletir, questionar e agir. E, para que esse desenvolvimento ocorra é necessário considerar o(a) educando(a) como sujeito de seus saberes e protagonista de sua formação continua. Neste sentido educando(a) e educador(a) são coo-participe dos processos de ensino e aprendizagem.</p>
+
+<br>
 </main>
