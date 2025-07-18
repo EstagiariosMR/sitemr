@@ -232,7 +232,7 @@ function excluirTrabalho() {
     }
 }
 
-function exibirImagem(){
+function exibirImagens(){
     formImagem();
     listarImagens();
 }
@@ -243,7 +243,7 @@ function formImagem($id=null){
     echo "<h2>" . ($id ? "Editar Imagem" : "Nova Imagem") . "</h2>";
     echo "<form method='POST' enctype='multipart/form-data'>";
     echo "<input type='text' name='titulo' placeholder='Título' value='" . htmlspecialchars($imagem['titulo'] ?? '') . "' required><br><br>";
-    echo "input type='file' name='arquivo' accept='image/*'" . (!$id ? ' required' : '') . "><br><br>";
+    echo "<input type='file' name='arquivo' accept='image/*'" . (!$id ? ' required' : '') . "><br><br>";
     echo "<button type='submit' name='btn_imagens'>" . ($id ? "Atualizar" : "Salvar") . "</button>";
     echo "</form><hr>";
 }
