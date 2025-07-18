@@ -14,6 +14,10 @@ function salvarArquivo($arquivo, $ano='', $turma='', $aluno='', $pastaBase='uplo
     }
     
     switch($tipoConteudo){
+        case 'imagem':
+            $pastaDestino = "$pastaBase/carrossel";
+            $nomeFinal = basename($arquivo['name']);
+            break;
         case 'trabalho':
             $pastaDestino = "$pastaBase/trabalhos/$ano/$turma";
             $nomeFinal = $aluno . '.pdf';
@@ -21,7 +25,7 @@ function salvarArquivo($arquivo, $ano='', $turma='', $aluno='', $pastaBase='uplo
         case 'noticia':
         default:
             $pastaDestino = "$pastaBase/noticias";
-            $nomeFinal = $arquivo['name'];
+            $nomeFinal = basename($arquivo['name']);
             break;
     }
 

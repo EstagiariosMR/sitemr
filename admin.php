@@ -45,6 +45,7 @@ $action = $_GET['action'] ?? null;
     <div class="admin-title">Painel Administrativo</div>
     <nav class="admin-nav">
         <a href="admin.php" class="admin-link">Início</a>
+        <a href="admin.php?action=imagens" class="admin-link">Carrossel</a>
         <a href="admin.php?action=noticias" class="admin-link">Notícias</a>
         <a href="admin.php?action=trabalhos" class="admin-link">Trabalhos</a>
         <form method="POST" class="admin-logout-form">
@@ -81,6 +82,20 @@ switch ($action) {
 
     case 'excluir_trabalho':
         excluirTrabalho();
+        break;
+
+    case 'imagens':
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_imagens'])) salvarImagem();
+        exibirImagens();
+        break;
+
+    case 'editar_imagem':
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn_imagens'])) salvarImagem($_GET['id']);
+        formImagem($_GET['id']);
+        break;
+
+    case 'excluir_imagem':
+        excluirImagem();
         break;
 
     case null:
@@ -215,6 +230,71 @@ function excluirTrabalho() {
         header('Location: admin.php?action=trabalhos');
         exit;
     }
+}
+
+function exibirImagem(){
+    formImagem();
+    listarImagens();
+}
+
+function formImagem($id=null){
+    $imagem = $id ? read('carrossel', '*', 'id = :id', ['id' => $id], true) : null;
+
+    echo "<h2>" . ($id ? "Editar Imagem" : "Nova Imagem") . "</h2>";
+    echo "<form method='POST' enctype='multipart/form-data'>";
+    echo "<input type='text' name='titulo' placeholder='Título' value='" . htmlspecialchars($imagem['titulo'] ?? '') . "' required><br><br>";
+    echo "input type='file' name='arquivo' accept='image/*'" . (!$id ? ' required' : '') . "><br><br>";
+    echo "<button type='submit' name='btn_imagens'>" . ($id ? "Atualizar" : "Salvar") . "</button>";
+    echo "</form><hr>";
+}
+
+function salvarImagem($id=null){
+    $titulo = $_POST['titulo'];
+    $arquivo = $_FILES['arquivo'] ?? null;
+    $caminho = $arquivo && $arquivo['error'] === UPLOAD_ERR_OK ? salvarArquivo($arquivo, 'uploads', 'carrossel') : null;
+
+    $dados = ['titulo' => $titulo];
+
+    if($caminho) $dados['imagem'] = $caminho;
+
+    if($id){
+        update('carrossel', $dados, 'id = :id', ['id' => $id]);
+    }
+    else{
+        $maior = read('carrossel', 'MAX(ordem) AS max_ordem', null, [], true);
+        $dados['ordem'] = ($maior['max_ordem'] ?? 0) + 1;
+
+        $resultadi = create('carrossel', $dados);
+
+        if(is_array($resultado) && isset($resultado['warning'])){
+            echo "<p style='color: orange; font-weight: bold;'>{$resultado['warning']}</p>";
+            return;
+        }
+    }
+
+    header('Location: admin.php?action=imagens');
+    exit;
+}
+
+function listarImagens(){
+    $imagens = read('carrossel', '*', null, [], false, 'ordem ASC');
+    echo "<table border='1'><tr><th>Ordem</th><th>Título</th><th>Imagem</th><th>Ações</th></tr>";
+    foreach($imagens as $img){
+        $imgPath = htmlspecialchars($img['imagem']);
+        echo "<tr>
+            <td>{$img['ordem']}</td>
+            <td>" . htmlspecialchars($img['titulo']) . "</td>
+            <td><img src='{$imgPath}' alt='" . htmlspecialchars($img['titulo']) . "' style='max-height: 80px;'></td>
+            <td>
+                <a href='admin.php?action=editar_imagem&id={$img['id']}'>Editar</a> |
+                <a href='admin.php?action=excluir_imagem&id={$img['id']}'>Excluir</a>
+            </td>
+        </tr>";
+    }
+}
+
+function excluirImagem(){
+
 }
 ?>
 </body>
