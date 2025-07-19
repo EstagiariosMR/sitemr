@@ -32,6 +32,19 @@ if (isset($_POST['btn_logout'])) {
 
 $action = $_GET['action'] ?? null;
 
+$tituloBase = 'Painel Administrativo';
+$tituloFormatado = $tituloBase;
+
+if($action === 'imagens'){
+    $tituloFormatado .= ' - Carrossel';
+}
+elseif($action === 'noticias'){
+    $tituloFormatado .= ' - Notícias';
+}
+elseif($action === 'trabalhos'){
+    $tituloFormatado .= ' - Trabalhos';
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -42,7 +55,7 @@ $action = $_GET['action'] ?? null;
 </head>
 <body>
 <header class="admin-header">
-    <div class="admin-title">Painel Administrativo</div>
+    <div class="admin-title"><?= htmlspecialchars($tituloFormatado) ?></div>
     <nav class="admin-nav">
         <a href="admin.php" class="admin-link">Início</a>
         <a href="admin.php?action=imagens" class="admin-link">Carrossel</a>
@@ -240,10 +253,10 @@ function exibirImagens(){
 function formImagem($id=null){
     $imagem = $id ? read('carrossel', '*', 'id = :id', ['id' => $id], true) : null;
 
-    echo "<h2>" . ($id ? "Editar Imagem" : "Nova Imagem") . "</h2>";
+    echo "<h2>" . ($id ? "Atualizar a imagem do carrossel" : "Adicionar nova imagem ao carrossel") . "</h2>";
     echo "<form method='POST' enctype='multipart/form-data'>";
     echo "<input type='text' name='titulo' placeholder='Título' value='" . htmlspecialchars($imagem['titulo'] ?? '') . "' required><br><br>";
-    echo "input type='file' name='arquivo' accept='image/*'" . (!$id ? ' required' : '') . "><br><br>";
+    echo "<input type='file' name='arquivo' accept='image/*'" . (!$id ? ' required' : '') . "><br><br>";
     echo "<button type='submit' name='btn_imagens'>" . ($id ? "Atualizar" : "Salvar") . "</button>";
     echo "</form><hr>";
 }
@@ -261,10 +274,8 @@ function salvarImagem($id=null){
         update('carrossel', $dados, 'id = :id', ['id' => $id]);
     }
     else{
-        $maior = read('carrossel', 'MAX(ordem) AS max_ordem', null, [], true);
-        $dados['ordem'] = ($maior['max_ordem'] ?? 0) + 1;
-
-        $resultadi = create('carrossel', $dados);
+        $dados['ordem'] = 1;
+        $resultado = create('carrossel', $dados);
 
         if(is_array($resultado) && isset($resultado['warning'])){
             echo "<p style='color: orange; font-weight: bold;'>{$resultado['warning']}</p>";
@@ -294,7 +305,39 @@ function listarImagens(){
 }
 
 function excluirImagem(){
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
 
+        $imagem = read('carrossel', '*', 'id = :id', ['id' => $id], true);
+        if(!$imagem){
+            header('Location: admin.php?action=imagens');
+            exit;
+        }
+
+        $ordemExcluir = $imagem['ordem'];
+
+        if(!empty($imagem['imagem']) && file_exists($imagem['imagem'])){
+            unlink($imagem['imagem']);
+        }
+
+        delete('carrossel', 'id = :id', ['id' => $id]);
+
+        $imagensParaAtualizar = read(
+            'carrossel',
+            '*',
+            'ordem > :ordemExcluir',
+            ['ordemExcluir' => $ordemExcluir],
+            false,
+            'ordem DESC'
+        );
+
+        foreach($imagensParaAtualizar as $img){
+            update('carrossel', ['ordem' => $img['ordem'] + 1], 'id = :id', ['id' => $img['id']]);
+        }
+
+        header('Location: admin.php?action=imagens');
+        exit;
+    }
 }
 ?>
 </body>
