@@ -42,14 +42,18 @@ function salvarArquivo($arquivo, $ano='', $turma='', $aluno='', $pastaBase='uplo
     return null;
 }
 
-function buscarImagem($caminho, $imagemPadrao = 'uploads/imagens/sem-imagem.jpg'){
-    if(empty($caminho)){
-        return null;
+function excluirArquivo($caminhoArquivo){
+    if(empty($caminhoArquivo) || !file_exists($caminhoArquivo)){
+        return false;
     }
-    
-    if(file_exists($caminho)){
-        return $caminho;
+
+    if(!unlink($caminhoArquivo)){
+        return false;
     }
-    
-    return $imagemPadrao;
+
+    $pasta = dirname($caminhoArquivo);
+
+    @rmdir($pasta);
+
+    return true;
 }

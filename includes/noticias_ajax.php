@@ -30,7 +30,7 @@ function obterCapa($arquivo){
         return 'assets/img/capa-padrao.jpg';
 }
 
-function gerarTitulo ($titutlo, $minCaracteres=20, $maxCaracteres=50){
+function gerarTitulo ($titulo, $minCaracteres=20, $maxCaracteres=50){
     
 }
 

@@ -35,16 +35,13 @@ if(!$noticia){
         <?php
         $arquivo = $noticia['arquivo'] ?? null;
 
-        if($arquivo){
+        if($arquivo && file_exists($arquivo)){
             $extensao = strtolower(pathinfo($arquivo, PATHINFO_EXTENSION));
 
             if(in_array($extensao, ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'])){
-                $src = buscarImagem($arquivo);
-
-                if($src): ?>
-                    <img src="<?= htmlspecialchars($src) ?>" alt="Imagem da notícia">
+                ?>
+                <img src="<?= htmlspecialchars($arquivo) ?>" alt="Imagem da notícia">
                 <?php
-                endif;
             }
             elseif($extensao === 'pdf'){
                 ?>

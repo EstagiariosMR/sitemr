@@ -172,7 +172,16 @@ function listarNoticias() {
 
 function excluirNoticia() {
     if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+
+        $noticia = read('noticias', '*', 'id = :id', ['id' => $id], true);
+
+        if($noticia && !empty($noticia['arquivo'])){
+            excluirArquivo($noticia['arquivo']);
+        }
+
         delete('noticias', 'id = :id', ['id' => $_GET['id']]);
+        
         header('Location: admin.php?action=noticias');
         exit;
     }
@@ -239,7 +248,16 @@ function listarTrabalhos() {
 
 function excluirTrabalho() {
     if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+
+        $trabalho = read('trabalhos_integrado', '*', 'id = :id', ['id' => $id], true);
+
+        if($trabalho && !empty($trabalho['arquivo'])){
+            excluirArquivo($trabalho['arquivo']);
+        }
+        
         delete('trabalhos_integrado', 'id = :id', ['id' => $_GET['id']]);
+        
         header('Location: admin.php?action=trabalhos');
         exit;
     }
@@ -261,9 +279,32 @@ function formImagem($id=null){
     echo "</form><hr>";
 }
 
+function reorganizarOrdens(){
+    $imagens = read('carrossel', '*', null, [], false, 'ordem ASC');
+
+    $novaOrdem = 1;
+
+    foreach($imagens as $img){
+        if($img['ordem'] != $novaOrdem){
+            update('carrossel', ['ordem' => $novaOrdem], 'id = :id', ['id' => $img['id']]);
+        }
+
+        $novaOrdem++;
+    }
+}
+
+function empurrarOrdens(){
+    $imagens = read('carrossel', '*', null, [], false, 'ordem DESC');
+
+    foreach($imagens as $img){
+        update('carrossel', ['ordem' => $img['ordem'] + 1], 'id = :id', ['id' => $img['id']]);
+    }
+}
+
 function salvarImagem($id=null){
-    $titulo = $_POST['titulo'];
+    $titulo = $_POST['titulo'] ?? '';
     $arquivo = $_FILES['arquivo'] ?? null;
+
     $caminho = $arquivo && $arquivo['error'] === UPLOAD_ERR_OK ? salvarArquivo($arquivo, 'uploads', 'carrossel') : null;
 
     $dados = ['titulo' => $titulo];
@@ -274,6 +315,7 @@ function salvarImagem($id=null){
         update('carrossel', $dados, 'id = :id', ['id' => $id]);
     }
     else{
+        empurrarOrdens();
         $dados['ordem'] = 1;
         $resultado = create('carrossel', $dados);
 
@@ -304,40 +346,25 @@ function listarImagens(){
     }
 }
 
-function excluirImagem(){
-    if(isset($_GET['id'])){
-        $id = $_GET['id'];
+function excluirImagem($id){
+    if(!$id) return false;
 
-        $imagem = read('carrossel', '*', 'id = :id', ['id' => $id], true);
-        if(!$imagem){
-            header('Location: admin.php?action=imagens');
-            exit;
-        }
+    $imagem = read('carrossel', '*', 'id = :id', ['id' => $id], true);
 
-        $ordemExcluir = $imagem['ordem'];
-
-        if(!empty($imagem['imagem']) && file_exists($imagem['imagem'])){
-            unlink($imagem['imagem']);
-        }
-
-        delete('carrossel', 'id = :id', ['id' => $id]);
-
-        $imagensParaAtualizar = read(
-            'carrossel',
-            '*',
-            'ordem > :ordemExcluir',
-            ['ordemExcluir' => $ordemExcluir],
-            false,
-            'ordem DESC'
-        );
-
-        foreach($imagensParaAtualizar as $img){
-            update('carrossel', ['ordem' => $img['ordem'] + 1], 'id = :id', ['id' => $img['id']]);
-        }
-
-        header('Location: admin.php?action=imagens');
-        exit;
+    if(!$imagem){
+        return false;
     }
+
+    if(!empty($imagem['imagem']) && file_exists($imagem['imagem'])){
+        excluirArquivo($imagem['arquivo']);
+    }
+
+    delete('carrossel', 'id = :id', ['id' => $id]);
+
+    reorganizarOrdens();
+
+    header('Location: admin.php?action=imagens');
+    exit;
 }
 ?>
 </body>
