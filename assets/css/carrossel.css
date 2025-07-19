@@ -1,0 +1,39 @@
+.carrossel {
+    width: 600px;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.carrossel-slides{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* Largura será definida dinamicamente no JS */
+}
+
+.carrossel-slides .slide{
+    min-width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    text-align: center;
+    user-select: none;
+}
+
+.carrossel-slides img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carrossel-controles{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.carrossel-controles button{
+    padding: 8px 16px;
+    margin: 0 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}

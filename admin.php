@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 require 'includes/crud.php';
@@ -274,7 +275,7 @@ function formImagem($id=null){
     echo "<h2>" . ($id ? "Atualizar a imagem do carrossel" : "Adicionar nova imagem ao carrossel") . "</h2>";
     echo "<form method='POST' enctype='multipart/form-data'>";
     echo "<input type='text' name='titulo' placeholder='Título' value='" . htmlspecialchars($imagem['titulo'] ?? '') . "' required><br><br>";
-    echo "<input type='file' name='arquivo' accept='image/*'" . (!$id ? ' required' : '') . "><br><br>";
+    echo "<input type='file' name='imagem' accept='image/*'" . (!$id ? ' required' : '') . "><br><br>";
     echo "<button type='submit' name='btn_imagens'>" . ($id ? "Atualizar" : "Salvar") . "</button>";
     echo "</form><hr>";
 }
@@ -303,9 +304,8 @@ function empurrarOrdens(){
 
 function salvarImagem($id=null){
     $titulo = $_POST['titulo'] ?? '';
-    $arquivo = $_FILES['arquivo'] ?? null;
-
-    $caminho = $arquivo && $arquivo['error'] === UPLOAD_ERR_OK ? salvarArquivo($arquivo, 'uploads', 'carrossel') : null;
+    $arquivo = $_FILES['imagem'] ?? null;
+    $caminho = $arquivo && $arquivo['error'] === UPLOAD_ERR_OK ? salvarArquivo($arquivo, '', '', '', 'uploads', 'imagem') : null;
 
     $dados = ['titulo' => $titulo];
 
@@ -346,26 +346,26 @@ function listarImagens(){
     }
 }
 
-function excluirImagem($id){
-    if(!$id) return false;
+function excluirImagem() {
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
 
-    $imagem = read('carrossel', '*', 'id = :id', ['id' => $id], true);
+        $imagem = read('carrossel', '*', 'id = :id', ['id' => $id], true);
 
-    if(!$imagem){
-        return false;
+        if ($imagem && !empty($imagem['imagem']) && file_exists($imagem['imagem'])) {
+            excluirArquivo($imagem['imagem']);
+        }
+
+        delete('carrossel', 'id = :id', ['id' => $id]);
+
+        reorganizarOrdens();
+
+        header('Location: admin.php?action=imagens');
+        exit;
     }
-
-    if(!empty($imagem['imagem']) && file_exists($imagem['imagem'])){
-        excluirArquivo($imagem['arquivo']);
-    }
-
-    delete('carrossel', 'id = :id', ['id' => $id]);
-
-    reorganizarOrdens();
-
-    header('Location: admin.php?action=imagens');
-    exit;
 }
 ?>
+
+<?php ob_end_flush(); ?>
 </body>
 </html>
