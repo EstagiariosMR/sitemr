@@ -2,6 +2,7 @@
 ob_start();
 session_start();
 
+require 'vendor/autoload.php';
 require 'includes/crud.php';
 require 'includes/upload_arquivos.php';
 
@@ -121,6 +122,17 @@ switch ($action) {
         break;
 }
 
+function purificarConteudo($html){
+    $config = HTMLPurifier_Config::createDefault();
+
+    $config->set('HTML.Allowed', 'p,b,strong,i,em,u,a[href],ul,ol,li,br,blockquote,h1,h2,h3,font[style],span[style],img[src|alt|width|height],table,tr,td,th'); 
+    $config->set('CSS.AllowedProperties', ['color', 'background-color', 'font-size', 'text-align', 'font-weight', 'font-style', 'text-decoration']);
+    $config->set('URI.AllowedSchemes', ['http' => true, 'https' => true, 'mailto' => true]);
+    
+    $purifier = new HTMLPurifier($config);
+    return $purifier->purify($html);
+}
+
 function exibirNoticias() {
     formNoticia();
     listarNoticias();
@@ -130,21 +142,70 @@ function formNoticia($id = null) {
     $noticia = $id ? read('noticias', '*', 'id = :id', ['id' => $id], true) : null;
 
     echo "<h2>" . ($id ? "Editar Notícia" : "Nova Notícia") . "</h2>";
-    echo "<form method='POST' enctype='multipart/form-data'>";
+    echo "<div id='msgErro' style='display:none; color: red; margin-bottom: 10px;'></div>";
+    echo "<form id='formEditor' method='POST' enctype='multipart/form-data'>";
     echo "<input type='text' name='titulo' placeholder='Título' value='" . htmlspecialchars($noticia['titulo'] ?? '') . "' required><br><br>";
-    echo "<textarea name='conteudo' placeholder='Conteúdo' rows='5'>" . htmlspecialchars($noticia['conteudo'] ?? '') . "</textarea><br><br>";
+
+    echo "
+    <div class='toolbar'>
+      <button type='button' onclick='format(\"bold\")'><b>B</b></button>
+      <button type='button' onclick='format(\"italic\")'><i>I</i></button>
+      <button type='button' onclick='format(\"underline\")'><u>U</u></button>
+      <button type='button' onclick='format(\"strikeThrough\")'>abc</button>
+      <select onchange='format(\"formatBlock\", this.value)'>
+        <option value=''>Parágrafo</option>
+        <option value='h1'>Título 1</option>
+        <option value='h2'>Título 2</option>
+        <option value='h3'>Título 3</option>
+      </select>
+      <select onchange='format(\"fontSize\", this.value)'>
+        <option value=''>Tamanho</option>
+        <option value='1'>Pequeno</option>
+        <option value='3'>Normal</option>
+        <option value='5'>Grande</option>
+        <option value='7'>Enorme</option>
+      </select>
+      <input type='color' onchange='format(\"foreColor\", this.value)' title='Cor da fonte' />
+      <input type='color' onchange='format(\"hiliteColor\", this.value)' title='Cor de fundo' />
+      <button type='button' onclick='format(\"insertOrderedList\")'>1.</button>
+      <button type='button' onclick='format(\"insertUnorderedList\")'>•</button>
+      <button type='button' onclick='format(\"justifyLeft\")'>⬅️</button>
+      <button type='button' onclick='format(\"justifyCenter\")'>⬅️➡️</button>
+      <button type='button' onclick='format(\"justifyRight\")'>➡️</button>
+      <button type='button' onclick='format(\"indent\")'>➡️ Recuar</button>
+      <button type='button' onclick='format(\"outdent\")'>⬅️ Voltar</button>
+      <button type='button' onclick='format(\"removeFormat\")'>✖ Limpar</button>
+    </div>
+
+    <div id='editor' contenteditable='true' style='background-color: white; border: 1px solid #ccc; min-height: 150px; padding: 10px; overflow-y: auto;'>" . ($noticia['conteudo'] ?? '') . "</div>
+
+    <input type='hidden' name='conteudo' id='conteudo'>
+
+    <br><br>
+    ";
+
     echo "<input type='file' name='arquivo' accept='.jpg,.jpeg,.png,.pdf'><br><br>";
     echo "<button type='submit' name='btn_noticias'>" . ($id ? "Atualizar" : "Publicar") . "</button>";
     echo "</form><hr>";
 }
 
 function salvarNoticia($id = null) {
+
+    $conteudoSalvo = '';
+    $conteudo = $_POST['conteudo'] ?? '';
+    if ($conteudo) {
+        $conteudoSalvo = $conteudo;
+    }
+
+    echo $conteudoSalvo . "<br><br><br><br>";
+
     $titulo = $_POST['titulo'];
     $conteudo = $_POST['conteudo'];
+    $conteudoLimpo = purificarConteudo($conteudo);
     $arquivo = $_FILES['arquivo'] ?? null;
     $caminho = $arquivo && $arquivo['error'] === UPLOAD_ERR_OK ? salvarArquivo($arquivo, 'noticia') : null;
 
-    $dados = ['titulo' => $titulo, 'conteudo' => $conteudo];
+    $dados = ['titulo' => $titulo, 'conteudo' => $conteudoLimpo];
     if ($caminho) $dados['arquivo'] = $caminho;
 
     $id
@@ -365,6 +426,8 @@ function excluirImagem() {
     }
 }
 ?>
+
+<script src="assets/js/editor.js"></script>
 
 <?php ob_end_flush(); ?>
 </body>

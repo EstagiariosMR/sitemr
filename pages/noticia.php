@@ -29,7 +29,7 @@ if(!$noticia){
         <div class="data"><p><em><?= date('d/m/Y H:i', strtotime($noticia['data_publicacao'])); ?></em></p></div>
 
         <div>
-            <p><?= htmlspecialchars($noticia['conteudo']); ?></p>
+            <p><?= $noticia['conteudo']; ?></p>
         </div>
 
         <?php
