@@ -7,8 +7,10 @@
 
     <base href="/sitemr/">
 
+    <!-- CSS do novo carrossel - separado das noticias -->
+    <!-- <link rel="stylesheet" href="assets/css/carrossel.css"> -->
+
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/geral.css">
     <link rel="stylesheet" href="assets/css/contato.css">

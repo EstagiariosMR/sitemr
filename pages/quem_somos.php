@@ -1,6 +1,6 @@
 <main>
 
-<h1>Quem Somo?</h1>
+<h1>Quem Somos?</h1>
 
 <br>
 

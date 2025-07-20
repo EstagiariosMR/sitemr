@@ -1,4 +1,6 @@
 <main class="homet">
+
+    <!-- O novo carrossel é um bloco pronto pra colar aqui, só tirar essa section toda e substituir pela div inteira   -->
     <section class="slideshow-container">
         <button class="prev" onclick="prevSlide()">&#10094;</button>
         <div class="slides">
@@ -21,5 +23,10 @@
     
 </main>
 
+<!-- JS do novo carrossel -->
+<!-- <script src="assets/js/carrossel.js"></script> -->
+
+<!-- JS do carrossel atual - só remover depois -->
 <script src="assets/js/script.js"></script>
+
 <script src="assets/js/paginacao.js"></script>
