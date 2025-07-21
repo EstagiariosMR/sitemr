@@ -1,17 +1,27 @@
 <main class="homet">
 
-    <!-- O novo carrossel é um bloco pronto pra colar aqui, só tirar essa section toda e substituir pela div inteira   -->
-    <section class="slideshow-container">
-        <button class="prev" onclick="prevSlide()">&#10094;</button>
-        <div class="slides">
-            <img src="assets/img/quadro1.jpg" class="slide">
-            <img src="assets/img/quadro2.jpg" class="slide">
-            <img src="assets/img/quadro3.jpg" class="slide">
-            <img src="assets/img/quadro4.jpg" class="slide">
+    <div class="carrossel">
+        <div class="carrossel-slides">
+            <?php if(!empty($imagens)): ?>
+                <?php foreach($imagens as $img): ?>
+                    <div class="slide">
+                        <img src="<?= htmlspecialchars($img['imagem']) ?>" alt="<?= htmlspecialchars($img['titulo']) ?>">
+                    </div>
+                <?php endforeach; ?>
 
+                <div class="slide">
+                    <img src="<?= htmlspecialchars($imagens[0]['imagem']) ?>" alt="<?= htmlspecialchars($imagens[0]['titulo']) ?>">
+                </div>
+            <?php else: ?>
+                <p>Nenhuma imagem cadastrada no carrossel</p>
+            <?php endif; ?>
         </div>
-        <button class="next" onclick="nextSlide()">&#10095;</button>
-    </section>
+
+        <div class="carrossel-controles">
+            <button class="carrossel-anterior">Anterior</button>
+            <button class="carrossel-proximo">Próximo</button>
+        </div>
+    </div>
 
     <div class="titulo_noticias">
     <h1>Noticias Maria Rocha</h1>
@@ -23,10 +33,5 @@
     
 </main>
 
-<!-- JS do novo carrossel -->
-<!-- <script src="assets/js/carrossel.js"></script> -->
-
-<!-- JS do carrossel atual - só remover depois -->
-<script src="assets/js/script.js"></script>
-
+<script src="assets/js/carrossel.js"></script>
 <script src="assets/js/paginacao.js"></script>

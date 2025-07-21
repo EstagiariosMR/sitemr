@@ -1,4 +1,4 @@
-.slideshow-container {
+/* .slideshow-container {
     position: relative;
     width: 100%;
     height: 95vh;
@@ -56,8 +56,8 @@
     cursor: pointer;
     padding: 0.8rem;
     z-index: 3;
-}
-
+} */
+/* 
 .dropdow {
     float: left;
     overflow: hidden;
@@ -75,7 +75,7 @@
 .next {
     right: 10px;
 }
-
+ */
 .homet {
     background-color: #1c2c4b;
     border: 3px solid #1c2c4b;
