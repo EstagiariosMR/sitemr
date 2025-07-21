@@ -1,3 +1,9 @@
+<?php
+require 'includes/crud.php';
+
+$imagens = read('carrossel', '*', false, [], false, 'ordem');
+?>
+
 <main class="homet">
 
     <div class="carrossel">
