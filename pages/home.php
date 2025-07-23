@@ -24,8 +24,8 @@ $imagens = read('carrossel', '*', false, [], false, 'ordem');
         </div>
 
         <div class="carrossel-controles">
-            <button class="carrossel-anterior">Anterior</button>
-            <button class="carrossel-proximo">Próximo</button>
+            <button class="carrossel-anterior"><</button>
+            <button class="carrossel-proximo">></button>
         </div>
     </div>
 
