@@ -1,0 +1,191 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f6fa;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    background-color: #1c2c4c;
+    color: #fff;
+    padding: 0 20px;
+    
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header nav span{
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+header nav .admin-logout-form {
+    display: inline;
+}
+
+header nav .admin-logout-form .admin-logout-btn {
+    color: #fff;
+    background: rgb(156, 19, 19);
+    border: none;
+    padding: 0.5rem 1.8rem;
+    border-radius: 15px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+header nav .admin-logout-form .admin-logout-btn:hover {
+    background: #a31313;
+}
+
+/* header nav a{
+    background-color: #e74c3c;
+    color: #ecf0f1;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+header nav a:hover{
+    background-color: #c0392b;
+} */
+
+.container{
+    display: flex;
+    margin-top: 60px;
+    
+}
+
+aside{
+    width: 15vw;
+    height: calc(100vh - 60px);
+    background-color: #1c2c4c;
+    color: #fff;
+    text-align: center;
+    padding-top: 20px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    border-top: 1px solid #000;
+}
+
+aside nav ul{
+    list-style: none;
+}
+
+aside nav ul li{
+    margin-bottom: 10px;
+}
+
+aside nav ul li a{
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #1c2c4c;
+    color: #ecf0f1;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+aside nav ul li a:hover{
+    background-color: rgb(156, 19, 19);
+}
+
+main{
+    flex: 1;
+    margin-left: 15vw;
+    padding: 20px;
+}
+
+table {
+    width: 95%;
+    border-collapse: collapse;
+    margin-left: 1rem;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-top: 1.5rem;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 0.98rem;
+}
+
+th {
+    background: #1c2c4c;
+    color: #fff;
+    font-weight: 600;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+a {
+    color: #1c2c4c;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+h2 {
+    margin-left: 1rem;
+}
+
+form input[type="text"], form textarea, form input[type="file"] {
+    width: 20%;
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    margin-left: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+form button[type="submit"] {
+    margin-left: 1rem;
+    background: #1c2c4c;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.8rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+form button[type="submit"]:hover {
+    background: rgb(156, 19, 19);
+}
