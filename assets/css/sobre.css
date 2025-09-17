@@ -23,6 +23,7 @@
     height: 75%;
     margin: 0;
     object-fit: cover;
+    text-align: center;
 }
 
 .card-body {

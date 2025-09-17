@@ -57,24 +57,15 @@
     padding: 0.8rem;
     z-index: 3;
 } */
-/* 
+
 .dropdow {
     float: left;
     overflow: hidden;
 }
 
-.dropdow .dropdpw-bnt {
+.dropdow .dropdow-bnt {
     font-size: 16px;
-
 }
-
-.carrossel-anterior {
-    left: 10px;
-}
-
-.carrossel-proximo{
-    right: 10px;
-} */
 
 .homet {
     background-color: #1c2c4b;
@@ -163,7 +154,6 @@
     border-radius: 1em;
     background-color: transparent;
     padding: 0;
-    width: 250px;
     width: 90%;
     height: auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -200,7 +190,6 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 55%;
     height: 52%;
     background-color: rgba(31, 48, 84, 0.719);
     color: white;
