@@ -6,27 +6,26 @@ $imagens = read('carrossel', '*', false, [], false, 'ordem');
 
 <main class="homet">
 
-    <div class="carrossel">
-        <div class="carrossel-slides">
+    <div class="container-carrossel">
+        <div class="carrossel-trilho">
             <?php if(!empty($imagens)): ?>
                 <?php foreach($imagens as $img): ?>
-                    <div class="slide">
-                        <img src="<?= htmlspecialchars($img['imagem']) ?>" alt="<?= htmlspecialchars($img['titulo']) ?>">
+                    <div class="carrossel-item">
+                        <img src="<?= htmlspecialchars($img['imagem']) ?>" 
+                            alt="<?= htmlspecialchars($img['titulo']) ?>">
                     </div>
                 <?php endforeach; ?>
-
-                <div class="slide">
-                    <img src="<?= htmlspecialchars($imagens[0]['imagem']) ?>" alt="<?= htmlspecialchars($imagens[0]['titulo']) ?>">
-                </div>
             <?php else: ?>
-                <p>Nenhuma imagem cadastrada no carrossel</p>
+                <div class="carrossel-item carrossel-item-vazio"></div>
             <?php endif; ?>
         </div>
-
-        <div class="carrossel-controles">
-            <button class="carrossel-anterior">Anterior</button>
-            <button class="carrossel-proximo">Proximo</button>
+        
+        <div class="controles-setas">
+            <button class="seta seta-esquerda"></button>
+            <button class="seta seta-direita"></button>
         </div>
+
+        <div class="controles-dots"></div>
     </div>
 
     <div class="titulo_noticias">
