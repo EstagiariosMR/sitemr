@@ -10,3 +10,7 @@ RewriteRule ^noticia/([0-9]+)$ index.php?page=noticia&id=$1 [QSA,L]
 
 # Rota padrão
 RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?page=$1 [QSA,L]
+
+php_value upload_max_filesize 128M
+php_value post_max_size 128M
+php_value memory_limit 256M
