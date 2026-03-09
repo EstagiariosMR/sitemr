@@ -1,8 +1,11 @@
 <?php
 require 'includes/crud.php';
 
+$trabalhosPorAnoETurma = [];
+$resultado = [];
+
 $anos = read('trabalhos_integrado', 'DISTINCT ano', false, [], false, 'ano DESC');
-$turmas = read('trabalhos_integrado', 'DISTINCT turma', false, [], false, 'turma ASC');
+// $turmas = read('trabalhos_integrado', 'DISTINCT turma', false, [], false, 'turma ASC');
 $resultado = read('trabalhos_integrado', '*', false, [], false, 'ano DESC, turma ASC, aluno ASC');
 
 function removerAcentos($string)
@@ -44,9 +47,7 @@ if (isset($_POST['btn_trabalhos'])) {
     if (!empty($aluno)) {
         $where[] = "aluno = :aluno";
         $valores['aluno'] = $aluno;
-    }
-
-    if (!empty($aluno)) {
+        
         $alunoFormatado = formatarNomeAluno($aluno);
         $where[] = "arquivo = :arquivo";
         $valores['arquivo'] = 'uploads/trabalhos/' . $ano . '/' . $turma . '/' . $alunoFormatado . '.pdf';
@@ -54,16 +55,23 @@ if (isset($_POST['btn_trabalhos'])) {
 
     $whereClause = !empty($where) ? implode(' AND ', $where) : null;
 
-    if ($ano && $turma && !$aluno) {
-        // Buscar alunos distintos para esse ano e turma
+    if($whereClause){
         $resultado = read('trabalhos_integrado', '*', $whereClause, $valores, false, 'ano DESC, turma ASC, aluno ASC');
-    } elseif (!$whereClause) {
-        // Consulta sem filtros (todos os registros)
-        $resultado = read('trabalhos_integrado', '*', false, [], false, 'ano DESC, turma ASC, aluno ASC');
-    } else {
-        // Caso contrário, filtra por ano, turma e aluno específico
-        $resultado = read('trabalhos_integrado', '*', $whereClause, $valores, true, 'ano DESC, turma ASC, aluno ASC');
     }
+    else{
+        $resultado = read('trabalhos_integrado', '*', false, [], false, 'ano DESC, turma ASC, aluno ASC');
+    }
+
+    // if ($ano && $turma && !$aluno) {
+    //     // Buscar alunos distintos para esse ano e turma
+    //     $resultado = read('trabalhos_integrado', '*', $whereClause, $valores, false, 'ano DESC, turma ASC, aluno ASC');
+    // } elseif (!$whereClause) {
+    //     // Consulta sem filtros (todos os registros)
+    //     $resultado = read('trabalhos_integrado', '*', false, [], false, 'ano DESC, turma ASC, aluno ASC');
+    // } else {
+    //     // Caso contrário, filtra por ano, turma e aluno específico
+    //     $resultado = read('trabalhos_integrado', '*', $whereClause, $valores, true, 'ano DESC, turma ASC, aluno ASC');
+    // }
 }
 ?>
 
@@ -117,7 +125,7 @@ if (isset($_POST['btn_trabalhos'])) {
                     <?php endforeach; ?>
                 </select>
                 <label for="turma"><strong>Turma:</strong></label>
-                <select name="turma" id="turma">
+                <select name="turma" id="turma" disabled>
                     <option value="" disabled selected>-- Selecione a turma --</option>
                     <?php foreach ($turmas as $item): ?>
                         <option value="<?php echo $item['turma']; ?>" <?php if (isset($turma) && $turma == $item['turma'])
@@ -127,7 +135,7 @@ if (isset($_POST['btn_trabalhos'])) {
                     <?php endforeach; ?>
                 </select>
                 <label for="aluno"><strong>Nome do aluno:</strong></label>
-                <input type="text" name="aluno" id="aluno" placeholder="Pesquise o Nome">
+                <input type="text" name="aluno" id="aluno" placeholder="Pesquise o Nome" disabled>
 
                 <button type="submit" name="btn_trabalhos">Pesquisar</button>
                 <button type="button" onclick="limparFormulario()">Limpar</button>
@@ -235,7 +243,7 @@ if (isset($_POST['btn_trabalhos'])) {
         </div>
 
 
-
+        <script src="/sitemr/assets/js/travaCampos.js"></script>
         <script src="/sitemr/assets/js/scrollForm.js"></script>
         <script src="/sitemr/assets/js/limparForm.js"></script>
     </div>
