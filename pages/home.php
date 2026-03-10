@@ -44,4 +44,4 @@ $imagens = read('carrossel', '*', false, [], false, 'ordem');
 </main>
 
 <script src="assets/js/carrossel.js"></script>
-<script src="assets/js/paginacao.js"></script>
+<script src="assets/js/filtroNoticias.js"></script>

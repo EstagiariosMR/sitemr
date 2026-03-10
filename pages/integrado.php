@@ -184,7 +184,7 @@ if (isset($_POST['btn_trabalhos'])) {
 
         ?>
 
-        <div class="resultado">
+        <div class="resultado" id="resultado">
             <?php if (!empty($trabalhosPorAnoETurma)): ?>
                 <!-- Exibe lista de alunos agrupados por ano e turma -->
                 <?php foreach ($trabalhosPorAnoETurma as $ano => $turmas): ?>
@@ -242,9 +242,9 @@ if (isset($_POST['btn_trabalhos'])) {
             <?php endif; ?>
         </div>
 
-
+        
         <script src="/sitemr/assets/js/travaCampos.js"></script>
-        <script src="/sitemr/assets/js/scrollForm.js"></script>
+        <script src="/sitemr/assets/js/filtroTrabalhos.js"></script>
         <script src="/sitemr/assets/js/limparForm.js"></script>
     </div>
 </main>
