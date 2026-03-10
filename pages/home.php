@@ -16,7 +16,12 @@ $imagens = read('carrossel', '*', false, [], false, 'ordem');
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
-                <div class="carrossel-item carrossel-item-vazio"></div>
+                <div class="carrossel-item carrossel-item-vazio">
+                    <div class="aviso-tecnico">
+                        <span class="icone-placeholder">🖼️</span>
+                        <p>Aguardando inserção de mídias no Banco de Dados.</p>
+                    </div>
+                </div>
             <?php endif; ?>
         </div>
         
