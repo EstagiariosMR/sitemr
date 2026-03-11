@@ -4,6 +4,9 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 $statusEnvio = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -14,8 +17,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'contatomr2026@gmail.com';
-        $mail->Password = 'wzzakdizxrppdown';
+        $mail->Username = $_ENV['SMTP_USER'];
+        $mail->Password = $_ENV['SMTP_PASS'];
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
         $mail->CharSet = 'UTF-8';
@@ -84,9 +87,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <label for="telefone">Telefone:</label><br>
         <input type="text" name="telefone" required><br><br>
 
-        <label for="assunto">Assunto:</label><br>
-        <input type="text" name="assunto" required><br><br>
-
         <label for="assunto">Assunto:</label>
         <select id="assunto" name="assunto" required>
             <option value="" disabled selected>-- Selecione uma opção --</option>
@@ -95,6 +95,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <option value="aproveitamento">Dúvidas sobre Aproveitamento</option>
             <option value="atestado">Dúvidas sobre Atestado de Frequência</option>
         </select><br><br>
+
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea name="mensagem" rows="5" required></textarea><br><br>
 
         <button type="submit">Enviar Agora</button>
     </form>
