@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -7,8 +9,9 @@ require_once dirname(__DIR__) . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
 
-$statusEnvio = "";
-$status_type = "";
+$statusEnvio = $_SESSION['statusEnvio'] ?? "";
+$status_type = $_SESSION['status_type'] ?? "";
+unset($_SESSION['statusEnvio'], $_SESSION['status_type']);
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $mail = new PHPMailer(true);
@@ -58,12 +61,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         ";
 
         $mail->send();
-        $statusEnvio = "Mensagem enviada com sucesso!";
-        $status_type = "success";
+
+        $_SESSION['statusEnvio'] = "Mensagem enviada com sucesso!";
+        $_SESSION['status_type'] = "success";
+
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
     }
     catch(Exception $e){
-        $statusEnvio = "Erro ao enviar: {$mail->ErrorInfo}";
-        $status_type = "error";
+        $_SESSION['statusEnvio'] = "Erro ao enviar: {$mail->ErrorInfo}";
+        $_SESSION['status_type'] = "error";
     }
 }
 ?>
@@ -104,11 +111,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <h2>Escola Maria Rocha</h2>
         <p>Estamos aqui para ajudar! Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
 
-        <pre style="display: none;">Type: <?php var_dump($status_type); ?></pre>
-
         <?php if(!empty($statusEnvio)): ?>
-            <div id="status-alert" class="alert-box <?php echo $status_type; ?>">
-                <span class="alert-message"><?php echo $statusEnvio?></span>
+            <div id="status-alert" class="alert-box <?php echo htmlspecialchars($status_type); ?>">
+                <span class="alert-message"><?php echo htmlspecialchars($statusEnvio); ?></span>
                 <button type="button" id="close-alert" class="close-btn">&times;</button>
             </div>
         <?php endif; ?>

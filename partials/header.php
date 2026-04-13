@@ -35,7 +35,7 @@
             <nav>
                 <ul>
                     <li class="dropdown">
-                        <a href="#" class="dropbtn">Sobre <br>a Escola</a>
+                        <a class="dropbtn">Sobre <br>a Escola</a>
                         <ul class="dropdown-content">
                             <li><a href="/sitemr/quem_somos">Quem Somos</a></li>
                             <li><a href="/sitemr/localizacao">Localização</a></li>
@@ -43,7 +43,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropbtn">Ensino Médio</a>
+                        <a class="dropbtn">Ensino Médio</a>
                         <ul class="dropdown-content">
                             <li><a href="/sitemr/medio_diurno">Médio Diurno</a></li>
                             <li><a href="/sitemr/medio_noturno">Médio Noturno</a></li>
@@ -51,7 +51,7 @@
                     </li>
                     <li><a href="/sitemr/integrado">Curso Técnico em Informática <br>Integrado ao Ensino Médio </a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropbtn">Curso Técnico Subsequente<br> (Educação Profissional)</a>
+                        <a class="dropbtn">Curso Técnico Subsequente<br> (Educação Profissional)</a>
                         <ul class="dropdown-content">
                             <li><a href="/sitemr/informatica">Técnico em Informática</a></li>
                             <li><a href="/sitemr/contabilidade">Técnico em Contabilidade</a></li>
