@@ -28,7 +28,7 @@ if(!$noticia){
         <h1><?= htmlspecialchars($noticia['titulo']); ?></h1>
         <div class="data"><p><em><?= date('d/m/Y H:i', strtotime($noticia['data_publicacao'])); ?></em></p></div>
 
-        <div>
+        <div class="conteudo-noticia">
             <p><?= $noticia['conteudo']; ?></p>
         </div>
 

@@ -153,6 +153,8 @@ $noticias = read('noticias', '*', null, [], false, 'id DESC');
         <button type="button" onclick="format('indent')">➡️ Recuar</button>
         <button type="button" onclick="format('outdent')">⬅️ Voltar</button>
         <button type="button" onclick="format('removeFormat')">✖ Limpar</button>
+
+        <button type="button" onclick="adicionarLink()">🔗 Link</button>
     </div>
 
     <div

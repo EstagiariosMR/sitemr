@@ -34,6 +34,12 @@ a {
     text-decoration: none;
 }
 
+#editor a, .conteudo-noticia a{
+    color: #0066cc !important;
+    text-decoration: underline !important;
+    cursor: pointer;
+}
+
 label {
     margin-bottom: 0;
 }

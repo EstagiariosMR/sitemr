@@ -1,3 +1,20 @@
+function adicionarLink(){
+    let url = prompt("Insira a URl do link: ")
+    
+    if(!url || url.trim() === ""){
+        return
+    }
+
+    url = url.trim()
+
+    if(!url.startsWith("http://") && !url.startsWith("https://")){
+        url = "https://" + url
+    }
+
+    document.getElementById('editor').focus()
+    document.execCommand('createLink', false, url)
+}
+
 function format(command, value = null){
     document.getElementById('editor').focus()
     document.execCommand(command, false, value)
