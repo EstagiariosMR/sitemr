@@ -98,7 +98,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </p>
             <p>
                 <img class="icon-svg" src="assets/img/facebook.svg" alt="Facebook" />
-                <a href="https://www.facebook.com/MariaRochaEscola/?locale=pt_BR" target="_blank">Facebook</a>
+                <a href="https://facebook.com/" target="_blank">Facebook</a>
             </p>
         </div>
     </div>
