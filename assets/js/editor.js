@@ -12,7 +12,23 @@ function adicionarLink(){
     }
 
     document.getElementById('editor').focus()
-    document.execCommand('createLink', false, url)
+
+    let idTemporario = "link-" + Date.now()
+
+    document.execCommand('createLink', false, idTemporario)
+
+    
+
+    setTimeout(function(){
+        let editor = document.getElementById('editor')
+        let linkCriado = editor.querySelector(`a[href="${idTemporario}"]`)
+
+        if(linkCriado){
+            linkCriado.setAttribute('href', url)
+            linkCriado.setAttribute('target', '_blank')
+            linkCriado.setAttribute('rel', 'noopener noreferrer')
+        }
+    }, 10)
 }
 
 function format(command, value = null){

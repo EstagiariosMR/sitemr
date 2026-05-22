@@ -11,7 +11,8 @@ if (!isset($_SESSION['usuario']) || !is_array($_SESSION['usuario'])) {
 function purificarConteudo($html){
     $config = HTMLPurifier_Config::createDefault();
 
-    $config->set('HTML.Allowed', 'p,b,strong,i,em,u,a[href],ul,ol,li,br,blockquote,h1,h2,h3,font[style],span[style],img[src|alt|width|height],table,tr,td,th'); 
+    $config->set('HTML.Allowed', 'p,b,strong,i,em,u,a[href|target|rel],ul,ol,li,br,blockquote,h1,h2,h3,font[style],span[style],img[src|alt|width|height],table,tr,td,th'); 
+    $config->set('Attr.AllowedFrameTargets', array('_blank'));
     $config->set('CSS.AllowedProperties', ['color', 'background-color', 'font-size', 'text-align', 'font-weight', 'font-style', 'text-decoration']);
     $config->set('URI.AllowedSchemes', ['http' => true, 'https' => true, 'mailto' => true]);
     
