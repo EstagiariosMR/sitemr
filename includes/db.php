@@ -1,17 +1,43 @@
 <?php
-$host = 'localhost';
-$db = 'escola';
-$user = 'root';
-$pass = '';
-
-// $host = 'mysql.mariarocha.org.br';
-// $db = 'mariarocha04';
-// $user = 'mariarocha04';
-// $pass = 'tecnico2025';
+// =========================================================================
+// CONTROLE DE AMBIENTE: Defina como 'mamp', 'xampp' ou 'producao'
+// =========================================================================
+$ambiente = 'mamp'; 
+// =========================================================================
 
 $charset = 'utf8mb4';
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+switch ($ambiente) {
+    case 'mamp':
+        // Configuração atual do seu Mac M3
+        $host = 'localhost';
+        $port = '8889';
+        $db   = 'escola';
+        $user = 'root';
+        $pass = 'root';
+        break;
+
+    case 'xampp':
+        // Configuração padrão para quando rodar no Windows/XAMPP
+        $host = 'localhost';
+        $port = '3306';
+        $db   = 'escola';
+        $user = 'root';
+        $pass = ''; // Senha vazia do XAMPP
+        break;
+
+    case 'producao':
+        // Credenciais da hospedagem oficial da escola
+        $host = 'mysql.mariarocha.org.br';
+        $port = '3306'; // Geralmente a padrão, mas se a hospedagem usar outra é só mudar aqui
+        $db   = 'mariarocha04';
+        $user = 'mariarocha04';
+        $pass = 'tecnico2025';
+        break;
+}
+
+// Montagem dinâmica da DSN incluindo a porta correta de cada ambiente
+$dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
 
 try{
     $pdo = new PDO($dsn, $user, $pass);
